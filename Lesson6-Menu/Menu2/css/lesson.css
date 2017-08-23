@@ -1,0 +1,99 @@
+/* A cool generated fiber background */
+body {
+	margin: 0px;
+	background:
+	linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+	linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+	linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+	linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+	linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+	linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	background-color: #131313;
+	background-size: 20px 20px;
+	width: 100%;
+	height: 100%;
+}
+	/* Changing the hue of the background */
+	div#background-hue {
+		position: fixed;
+		background-color: rgba(50, 14, 150, 0.2);
+		width: 100%;
+		height: 100%;
+	}
+		header#main-header {
+			position: fixed;
+			background-color: #ff8000;
+			margin-top: 20px;
+			width: 100%;
+			height: 60px;
+			/*box-shadow:0 12px 20px rgba(255, 128, 0, 0.9);
+			*/
+  			background: -webkit-radial-gradient(center bottom, rgba(255, 128, 0, 0.1) 0%, 
+  															   rgba(255, 128, 0, 0.9) 80%), 
+  						-webkit-linear-gradient(top, #ff8000 0%,
+  													 rgba(0, 0, 0, 0.0) 6%,
+  													 rgba(0, 0, 0, 0.0) 52%,
+  													 rgba(0, 0, 0, 0.0) 91%,
+  													 rgba(0, 0, 0, 0.0) 100%);
+		
+			
+		}
+		#main-header-shadow {
+			position: fixed;
+			width: 100%;
+			margin-top: 60px;
+			height: 15px;
+		    background: -webkit-radial-gradient(center bottom, rgba(0, 0, 0, 0.0) 40%, 
+  															   rgba(100, 50, 0, 0.8) 90%), 
+  						-webkit-linear-gradient(top, rgba(20, 4, 0, 0.4) 0%,
+  													 rgba(15, 3, 0, 0.2) 6%,
+  													 rgba(10, 2, 0, 0.0) 52%,
+  													 rgba(5, 1, 0, 0.0) 91%,
+  													 rgba(0, 0, 0, 0.0) 100%);
+		}
+			img#page-logo {
+			
+			}
+			p#page-heading {
+				position: absolute;
+				right: 0px;
+				margin-right: 20px;
+			}
+			#menu-button {
+				position: fixed;
+				display: inline-block;
+				background-color: #a65300;
+				top: 28px;
+				left:10px;
+				cursor: pointer;
+				padding: 0px 6px 0px 6px;
+				z-index: 1;
+				transition: background-color 0.5s;
+			}
+				#menu-button:hover { 
+					background-color: rgb(255, 128, 0);
+				}
+				/* 3 different bars */
+				.bar1, .bar2, .bar3 {
+					width: 30px;
+					height: 5px;
+					background-color: #DDD;
+					margin: 7px 0;
+					transition: 0.4s;
+				}
+				/* Rotate first bar */
+				.change .bar1 {
+					-webkit-transform: rotate(-45deg) translate(-8px, 9px);
+					transform: rotate(-45deg) translate(-8px, 9px);
+				}
+				
+				/* Fade out the second bar */
+				.change .bar2 {
+					opacity: 0;
+				}
+				
+				/* Rotate last bar */
+				.change .bar3 {
+					-webkit-transform: rotate(45deg) translate(-8px, -9px);
+					transform: rotate(45deg) translate(-8px, -9px);
+				}

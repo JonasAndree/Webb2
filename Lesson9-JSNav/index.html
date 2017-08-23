@@ -1,0 +1,96 @@
+<!-- Declares that HTML5 is used -->
+<!DOCTYPE html>
+
+<html>
+	<!-- All metadata will be placed hear. The following tags describe metadata: <title>, <style>, <meta>, <link>, <script>, and <base> -->
+	<head>
+		<title>Lessons</title>
+		<!-- Closing a open meta tag is optional, you close it with the the closing slash (/) but it is REQUIRED in XHTML and XML.
+			 If you expect XML software to access your page, it is a good idea to keep the closing slash! 
+			 So why not just close it.-->
+		<meta charset="utf-8" />
+		<meta name="description" content="Lessons" />
+		<meta name="keywords" content="Lesson, HTML" />
+		<meta name="author" content="Jonas Andrée" />
+		
+		<!-- HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
+		     The viewport is the user's visible area of a web page. It varies with the device, 
+		     and will be smaller on a mobile phone than on a computer screen. 
+		     You should include the following <meta> viewport element in all your web pages:
+		     -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!-- The <base> element specifies the base URL and base target for all relative URLs in a page: 
+			 But in this course we will not use it.-->
+		<!-- <base href="http://localhost/Webb2_17-18/Lesson4-CSS" target="_blank" /> -->
+		
+		
+		<!-- CSS In this course you have to order your styling in a separate stylesheet file (css in a css folder). -->
+		<link rel="stylesheet" type="text/css" href="css/lesson.css"/>
+	</head>
+	
+	<!-- The content of the webbpage will be placed here. -->
+	<body>
+		<div id="background-hue"></div>
+		<!-- Definition and Usage 
+			 The <header> tag is new in HTML5.
+			 
+			 The <header> element represents a container for introductory content or a set of navigational links.
+			 A <header> element typically contains:
+			 	one or more heading elements (<h1> - <h6>)
+			 	logo or icon
+			 	authorship information
+
+			 You can have several <header> elements in one document.
+		 -->
+		<header id="main-header">
+			<div id="menu-button" class="menu-button" onclick="toggleMenu(this)">
+			  	<div class="bar1"></div>
+			  	<div class="bar2"></div>
+			  	<div class="bar3"></div>
+			</div>
+			<div id="main-header-shadow"></div>
+			<p id="page-heading"></p>
+		</header>
+		
+		<!-- HTML5 <nav> Element
+			 The <nav> element defines a set of navigation links. -->
+		<nav id="nav">
+			<header>
+				
+			</header>
+		</nav>
+		
+		<!-- Defines the main content of a document -->
+		<main>
+		
+		</main>
+		
+		<!-- HTML5 <footer> Element
+			 The <footer> element specifies a footer for a document or section.
+
+			 A <footer> element should contain information about its containing element.
+
+			 A footer typically contains the author of the document, copyright information, 
+			 links to terms of use, contact information, etc.
+
+			 You may have several <footer> elements in one document. -->
+		<footer>
+				
+		</footer>
+		
+		<!-- Most javascript shall be added in the end of the body.
+			 Loading javascript files can take time and we want to see 
+			 the graphics on the page as fast as possible.  -->
+		<script type="text/javascript" src="js/menu.js"></script>
+	</body>
+</html>
+
+<!-- To read:
+	 old:
+	 https://www.w3schools.com/html/html5_semantic_elements.asp
+	 
+	 new:
+	 https://www.w3schools.com/html/html_head.asp
+
+ -->
