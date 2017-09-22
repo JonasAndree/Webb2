@@ -1,0 +1,21 @@
+
+section.main-sections {
+	margin: 20px;
+	border: 1px solid #808080;
+	padding: 10px;
+	background-color: #c0c0c0;
+	color: #808080;
+	
+}
+section#books {
+	background-color: red;
+	color: white;
+	
+	border: 1px solid #cc0000;
+}
+
+
+section#tv {
+	background-color: pink;
+	color: white;
+}
