@@ -2,3 +2,31 @@ header#main-header {
 	margin-left: 45%;
 	color: rgba(255, 40, 2, 0.5);
 }
+
+nav#navigation-field {
+	background-color: rgba(40, 40, 40, 0.8);
+}
+nav#navigation-field ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.intro-content {
+	background-color: white;
+}
+.books-content {
+	background-color: orange;
+}
+.video-games-content {
+	background-color: red;
+}
+.education-content {
+	background-color: blue;
+}
+.about-content {
+	background-color: purple;
+}
+.main-content {
+	height: 800px;
+}
