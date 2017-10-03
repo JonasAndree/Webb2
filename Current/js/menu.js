@@ -23,3 +23,19 @@ function blub2(parm) {
 
 blub();
 blub2(text2);
+
+var toggleNavigationBar = false;
+
+function toggleMenu(menuElement) {
+	console.log("change");
+	menuElement.classList.toggle("change");
+	
+	if (toggleNavigationBar) {
+		document.getElementById("navigation-field").style.height = "200px";
+		document.getElementById("navigation-field").style.opacity = "1";
+	} else {
+		document.getElementById("navigation-field").style.height = "0px";
+		document.getElementById("navigation-field").style.opacity = "0";
+	}
+	toggleNavigationBar = !toggleNavigationBar;
+}
