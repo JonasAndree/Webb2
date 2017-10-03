@@ -1,32 +1,84 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
 header#main-header {
 	margin-left: 45%;
 	color: rgba(255, 40, 2, 0.5);
 }
 
+#menu-button {
+	position: fixed;
+	background-color: #a65300;
+	top: 10px;
+	left: 10px;
+	cursor: pointer;
+	padding: 0px 6px 0px 6px;
+}
+
+#menu-button:hover {
+	background-color: rgb(255, 128, 0);
+}
+
+/* 3 different bars */
+.bar1, .bar2, .bar3 {
+	width: 30px;
+	height: 5px;
+	margin: 7px 0;
+	background-color: #eee;
+}
+
 nav#navigation-field {
 	background-color: rgba(40, 40, 40, 0.8);
+	height: 100vh;
+	width: 0px;
+	display: none; position : fixed;
+	top: 0px;
+	position: fixed;
 }
+
 nav#navigation-field ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
 
+nav#navigation-field ul li {
+	margin: 10px;
+}
+
+.navigation-button {
+	width: 100%;
+	height: 100%;
+	padding: 50px 10px 50px 10px;
+	border-color: rgba(120, 120, 120, 0.8);
+}
+
 .intro-content {
 	background-color: white;
 }
+
 .books-content {
 	background-color: orange;
+	color: white;
 }
+
 .video-games-content {
 	background-color: red;
+	color: white;
 }
+
 .education-content {
 	background-color: blue;
+	color: white;
 }
+
 .about-content {
 	background-color: purple;
+	color: white;
 }
+
 .main-content {
-	height: 800px;
+	min-height: 100vh;
 }
