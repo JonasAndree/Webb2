@@ -46,56 +46,59 @@ header#main-header {
 nav#navigation-field {
 	background-color: rgba(40, 40, 40, 0.8);
 	position : fixed;
-	height: 190px;
-	width: 100vw;
+	height: 0px;
+	width: 0vw;
 	transition: 0.3s;
-	
+	opacity:0;
 	top: 0px;
 	position: fixed;
 }
 
 nav#navigation-field ul {
 	list-style-type: none;
-	margin: 0;
+	margin-top: 50px;
 	padding: 0;
 }
 
 nav#navigation-field ul li {
-	
 	float: left;
-	margin: 60px 10px 10px 10px;
+	margin: 10px;
 }
 
 .navigation-button {
-	width: 120px;
-	height: 120px;
+	width: 110px;
+	height: 110px;
 	border-color: rgba(120, 120, 120, 0.8);
-}
-
-.intro-content {
-	background-color: white;
-}
-
-.books-content {
-	background-color: orange;
-	color: white;
-}
-
-.video-games-content {
-	background-color: red;
-	color: white;
-}
-
-.education-content {
-	background-color: blue;
-	color: white;
-}
-
-.about-content {
-	background-color: purple;
-	color: white;
 }
 
 .main-content {
 	min-height: 100vh;
+	display: flex;
+	text-align: center;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
 }
+	.intro-content {
+		background-color: white;
+	}
+	
+	.books-content {
+		background-color: orange;
+		color: white;
+	}
+	
+	.video-games-content {
+		background-color: red;
+		color: white;
+	}
+	
+	.education-content {
+		background-color: blue;
+		color: white;
+	}
+	
+	.about-content {
+		background-color: purple;
+		color: white;
+	}

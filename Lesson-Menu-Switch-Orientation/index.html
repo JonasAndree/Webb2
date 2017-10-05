@@ -1,0 +1,85 @@
+<!-- Declares that HTML5 is used -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Jonas Portfolio</title>
+		<meta name="description" content="My portfolio" />
+		<meta name="keywords" content="Learning HTML, CSS and JavaScript" />
+		<meta name="author" content="Jonas Andrée" />
+		
+		<!-- HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
+		     The viewport is the user's visible area of a web page. It varies with the device, 
+		     and will be smaller on a mobile phone than on a computer screen. 
+		     You should include the following <meta> viewport element in all your web pages:
+		     -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!-- CSS In this course you have to order your styling in a separate stylesheet file (css in a css folder). -->
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+				
+	</head>
+	
+	<body>
+		<header id="main-header">
+			
+			<div id="menu-button" class="menu-button" onclick="toggleMenu(this)">
+			  	<div class="bar1"></div>
+			  	<div class="bar2"></div>
+			  	<div class="bar3"></div>
+			</div>
+			
+			
+			
+			
+		Welcome to Jonas portfolio
+		</header>
+		<nav id="navigation-field"> 
+			<ul id="navigation-field-ul" >
+				<li id="nav-intro" class="intro-content">
+					<a href="#intro-content">
+						<button class="navigation-button intro-content">Intro</button>
+					</a>
+				</li>
+				<li id="nav-books" class="books-content">
+					<a href="#books-content">
+						<button class="navigation-button books-content">Books</button>
+					</a>
+				</li>
+				<li id="nav-vdeo-games" class="video-games-content">
+					<a href="#video-games-content">
+						<button class="navigation-button video-games-content">Video Games</button>
+					</a>
+				</li>
+				<li id="nav-education" class="education-content">
+					<a href="#education-content">
+						<button class="navigation-button education-content">Education</button>
+					</a>
+				</li>
+				<li id="nav-about" class="about-content">
+					<a href="#about-content">
+						<button class="navigation-button about-content">About</button>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<aside> </aside>
+		<main> 
+			<section id="intro-content" class="main-content intro-content">Intro</section>
+			<section id="books-content" class="main-content books-content">Books</section>
+			<section id="video-games-content" class="main-content video-games-content">Video Games</section>
+			<section id="education-content" class="main-content education-content">Education</section>
+			<section id="about-content" class="main-content about-content">About</section>
+		</main>
+	
+	
+	
+	</body>
+	
+	<!-- Most javascript shall be added in the end of the body.
+		 Loading javascript files can take time and we want to see 
+		 the graphics on the page as fast as possible.  -->
+	<script type="text/javascript" src="js/menu.js"></script>
+	<script type="text/javascript" src="js/temp.js"></script>
+	
+</html>
