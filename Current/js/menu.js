@@ -26,10 +26,19 @@ blub2(text2);
 
 var toggleNavigationBar = false;
 
+if (toggleNavigationBar) {
+	document.getElementById("navigation-field").style.height = "200px";
+	document.getElementById("navigation-field").style.opacity = "1";
+} else {
+	document.getElementById("navigation-field").style.height = "0px";
+	document.getElementById("navigation-field").style.opacity = "0";
+}
+
 function toggleMenu(menuElement) {
 	console.log("change");
 	menuElement.classList.toggle("change");
-	
+
+	toggleNavigationBar = !toggleNavigationBar;
 	if (toggleNavigationBar) {
 		document.getElementById("navigation-field").style.height = "200px";
 		document.getElementById("navigation-field").style.opacity = "1";
@@ -37,5 +46,4 @@ function toggleMenu(menuElement) {
 		document.getElementById("navigation-field").style.height = "0px";
 		document.getElementById("navigation-field").style.opacity = "0";
 	}
-	toggleNavigationBar = !toggleNavigationBar;
 }

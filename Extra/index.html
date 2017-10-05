@@ -1,0 +1,50 @@
+<!-- Declares that HTML5 is used -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Jonas Portfolio</title>
+		<meta name="description" content="My portfolio" />
+		<meta name="keywords" content="Learning HTML, CSS and JavaScript" />
+		<meta name="author" content="Jonas Andrée" />
+		
+		<!-- HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
+		     The viewport is the user's visible area of a web page. It varies with the device, 
+		     and will be smaller on a mobile phone than on a computer screen. 
+		     You should include the following <meta> viewport element in all your web pages:
+		     -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!-- CSS In this course you have to order your styling in a separate stylesheet file (css in a css folder). -->
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+				
+	</head>
+	<body>
+		<header>
+			<div id="menu-button" onClick="toggleMenu()">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+		</header>
+		<nav>
+			<ul>
+				<li><a><button class="intro-color active" onClick="">Intro</button></a></li>
+				<li><a><button class="about-color" onClick="">About</button></a></li>
+				<li><a><button class="books-color" onClick="">Books</button></a></li>
+				<li><a><button class="games-color" onClick="">Games</button></a></li>
+				<li><a><button class="education-color" onClick="">Education</button></a></li>
+			</ul>
+		</nav>
+		<main>
+			<section id="intro-section" class="intro-color">Intro</section>
+			<section id="about-section" class="about-color">About</section>
+			<section id="books-section" class="books-color">Books</section>
+			<section id="games-section" class="games-color">Games</section>
+			<section id="education-section" class="education-color">Education</section>
+		</main>
+		<footer></footer>
+	</body>
+	
+	<script type="text/javascript" src="js/menu.js"></script>
+</html>
