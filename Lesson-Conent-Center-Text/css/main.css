@@ -29,9 +29,7 @@ header#main-header {
 	margin: 7px 0;
 	background-color: #eee;
 	transition: 0.3s;
-}
-
-	
+} 
 	.change .bar1 {
 		transform: rotate(-45deg) translate(-8px, 9px);
 	}
