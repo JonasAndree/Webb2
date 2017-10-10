@@ -17,12 +17,24 @@ body {
 	height: 5px;
 	margin-top: 7px;
 	background-color: white;
+	transition: 0.3s;
 } 
+	.change .bar1 {
+		transform: rotate(-45deg) translate(-8px, 9px);
+	}
+	.change .bar2 {
+		opacity: 0;
+	}
+	.change .bar3 {
+		transform: rotate(45deg) translate(-8px, -9px);
+	}
 
 nav {
-	position: absolute;
+	position: fixed;
 	height: 190px;
 	width: 100vw;
+	top: 40px;
+	background-color: rgba(140, 40, 40, 0.5);
 }
 
 nav ul {
@@ -59,3 +71,28 @@ main section {
 	width: 100vw;
 	height: 100vh;
 }
+
+
+
+
+
+
+
+
+#hiding-the-container {
+	
+}
+#about-container {
+	display: none;
+}
+#to-be-or-not-to-be {
+	width: 200px;
+	height:200px;
+	background-color: rgba(200, 200, 50, 0.5);
+}
+
+
+
+
+
+

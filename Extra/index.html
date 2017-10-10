@@ -27,7 +27,7 @@
 				<div class="bar3"></div>
 			</div>
 		</header>
-		<nav>
+		<nav id="nav-container">
 			<ul>
 				<li><a><button class="intro-color active" onClick="">Intro</button></a></li>
 				<li><a><button class="about-color" onClick="">About</button></a></li>
@@ -38,7 +38,10 @@
 		</nav>
 		<main>
 			<section id="intro-section" class="intro-color">Intro</section>
-			<section id="about-section" class="about-color">About</section>
+			<section id="about-section" class="about-color">
+				<button id="hiding-the-container" onclick="toggleingAContainer()">toggle</button>
+				<div id="to-be-or-not-to-be">About</div>
+			</section>
 			<section id="books-section" class="books-color">Books</section>
 			<section id="games-section" class="games-color">Games</section>
 			<section id="education-section" class="education-color">Education</section>

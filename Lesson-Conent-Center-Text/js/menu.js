@@ -3,10 +3,19 @@ var currentState;
 
 var toggleNavigationBar = false;
 menuSize();
+/**
+ * 
+ * @param event
+ * @returns
+ */
 window.addEventListener('resize', function(event) {
 	menuSize();
 });
-
+/**
+ * 
+ * @param menuElement
+ * @returns
+ */
 function toggleMenu(menuElement) {
 	menuElement.classList.toggle("change");
 
@@ -14,6 +23,10 @@ function toggleMenu(menuElement) {
 
 	menuSize();
 }
+/**
+ * 
+ * @returns
+ */
 function menuSize() {
 	var areaWidth = window.innerWidth;
 	var elementWidth = document.getElementById("navigation-field-ul").children.length
@@ -45,38 +58,54 @@ function menuSize() {
 		}
 	}
 }
-
-function scrollToItem(item) {
-	var diff = (item.offsetTop - window.scrollY) / 8;
+var scrollButton = false;
+/**
+ * Functions that scrolls to a element.
+ * @param element
+ * @returns
+ */
+function scrollToItem(element) {
+	// Detects where the element is compared to the top of the screen.
+	var diff = (element.offsetTop - window.scrollY) / 8;
+	
 	if (Math.abs(diff) > 1) {
 		window.scrollTo(0, (window.scrollY + diff));
 		clearTimeout(window._TO);
-		window._TO = setTimeout(scrollToItem, 30, item);
+		window._TO = setTimeout(scrollToItem, 30, element);
 	} else {
-		window.scrollTo(0, item.offsetTop);
+		window.scrollTo(0, element.offsetTop);
 		scrollButton = false;
 	}
 }
 var stateObj = { index: "index" };
-var scrollButton = false;
-
-function scroll(elID) {
+/**
+ * If we need to scroll to an element.
+ * @param elID
+ * @returns
+ */
+function buttonScroll(elID) {
 	scrollButton = true;
-	currentState = elID;
-	history.pushState(stateObj, elID, "index.html#"+elID);
-	scrollToItem(document.getElementById(elID));
-	
+	scrollHistory(elID);
 }
-
-
+/**
+ * 
+ * @param elID
+ * @returns
+ */
 function scrollHistory(elID) {
 	currentState = elID;
 	scrollToItem(document.getElementById(elID));
-	history.pushState(stateObj, elID, "index.html#"+elID);
+	history.pushState(stateObj, elID, "index.html#" + elID);
 }
 
 
-
+/**
+ * THis is a listener that listens if the page is scrolled.
+ * Loops through the mains children and uses the a function to detect if thay
+ * are in view.
+ * 
+ * @returns null
+ */
 window.addEventListener('scroll', function() {
 	if(scrollButton == false) {
 		 for(var i = 0; i < document.getElementById("main-content").children.length; i++) {
@@ -84,9 +113,14 @@ window.addEventListener('scroll', function() {
 		 }
 	}
 });
+/**
+ * Function that detekts if an element is sopose to be in wiew.
+ * 
+ * @param el
+ * @returns null
+ */
 function isScrolledIntoView(el) {
     var elemTop = el.getBoundingClientRect().top;
-    var elemBottom = el.getBoundingClientRect().bottom;
     if (elemTop <= window.innerHeight/2 && elemTop >= -window.innerHeight/2) {
     	if(currentState != el.id) {
     		scrollHistory(el.id);
