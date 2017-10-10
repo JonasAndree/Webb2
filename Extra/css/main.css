@@ -5,16 +5,18 @@ body {
 
 #menu-button {
 	position: fixed;
-	padding: 0px 6px 0px 6px;
+	padding: 0px 6px 6px 6px;
 	top: 10px;
 	left: 10px;
 	cursor: pointer;
 	z-index: 10;
+	background-color: purple;
 }
 .bar1, .bar2, .bar3 {
 	width: 30px;
 	height: 5px;
-	margin-top: 7px;  
+	margin-top: 7px;
+	background-color: white;
 } 
 
 nav {

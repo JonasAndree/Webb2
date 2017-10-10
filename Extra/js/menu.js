@@ -1,3 +1,5 @@
-function toggleMennu() {
+function toggleMenu(element) {
+	
+	element
 	
 }
