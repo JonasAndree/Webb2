@@ -71,7 +71,7 @@ function scrollToItem(element) {
 	if (Math.abs(diff) > 1) {
 		window.scrollTo(0, (window.scrollY + diff));
 		clearTimeout(window._TO);
-		window._TO = setTimeout(scrollToItem, 30, element);
+		window._TO = setTimeout(scrollToItem, 10, element);
 	} else {
 		window.scrollTo(0, element.offsetTop);
 		scrollButton = false;

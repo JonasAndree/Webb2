@@ -67,7 +67,7 @@ function menuSize() {
 }
 
 function scrollToItem(item) {
-	var diff = (item.offsetTop - window.scrollY) / 8
+	var diff = (item.offsetTop - window.scrollY) / 8;
 	if (Math.abs(diff) > 1) {
 		window.scrollTo(0, (window.scrollY + diff))
 		clearTimeout(window._TO)
