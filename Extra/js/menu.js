@@ -26,6 +26,36 @@ function toggleMenu(menuElement) {
 window.addEventListener("resize", function(event) {
 	console.log("Height" + window.innerHeight);
 	console.log("Width" + window.innerWidth);
+	var nav = document.getElementsByTagName("nav")[0].children[0].children;
+	
+	var width = nav[0].offsetWidth;
+	var length = nav.length;
+	var totalWidthOfNavElements = width*length+ length*10*2;
+	var navContainer = document.getElementById("nav-container");
+	
+	 if (window.innerWidth < 400) {
+		navContainer.style.width = "100vw";
+		navContainer.style.height = "100vh";
+		for (var i = 0; i < length; i++) {
+			console.log(nav[i].children[0].children[0]);
+			nav[i].children[0].children[0].style.width = "100vw";
+			nav[i].children[0].children[0].style.height = "30px";
+		}
+		
+		
+	} else if (window.innerWidth < totalWidthOfNavElements) {
+		console.log(true);
+		navContainer.style.width = "180px";
+		navContainer.style.height = "100vh";
+	} else {
+		console.log(false);
+		navContainer.style.width = "100vw";
+		navContainer.style.height = "180px";
+	}
+	
+	
+	
+	
 });
 
 
