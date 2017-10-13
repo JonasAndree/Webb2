@@ -1,3 +1,11 @@
+body {
+	margin: 0px;
+	adding: 0px;
+	background-color: rgb(41,41,41);
+}
+button {
+  outline: none;
+}
 ::-webkit-scrollbar {
       width: 10px;
 } /* this targets the default scrollbar (compulsory) */
@@ -8,30 +16,26 @@
 ::-webkit-scrollbar-thumb {
       background-color: rgb(240, 240, 240); 
 } /* this will style the thumb, ignoring the track */
-
 ::-webkit-scrollbar-button {
       background-color: rgb(240, 240, 240);  
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
-
 ::-webkit-scrollbar-corner {
       background-color: black;
 } 
 ::selection {
   background: rgb(240, 240, 240); 
 }
+
 .white::-webkit-scrollbar-thumb:hover {  
 	 background-color: rgb(255, 255, 255);
 	//filter: brightness(430%) ;
 }
-
-
 .white::-webkit-scrollbar-track  { 
 	background-color: rgb(140, 140, 140);  
 }
 .white::-webkit-scrollbar-thumb {
       background-color: rgb(240, 240, 240); 
 } /* this will style the thumb, ignoring the track */
-
 .white::-webkit-scrollbar-button {
       background-color: rgb(240, 240, 240); 
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
@@ -44,13 +48,13 @@
 }
 
 .orange::-webkit-scrollbar-track { 
-	background-color: rgb(200, 145, 5);   
+	background-color: #c16702;
 }
 .orange::-webkit-scrollbar-thumb {
-      background-color: orange;
+      background-color: #fb8502;
 } /* this will style the thumb, ignoring the track */
 .orange::-webkit-scrollbar-button {
-      background-color: orange;
+      background-color: #fb8502;
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
 .orange::selection {
   background: orange;
@@ -66,12 +70,10 @@
 .red::-webkit-scrollbar-thumb {
       background-color: rgb(255, 0, 0); 
 } /* this will style the thumb, ignoring the track */
-
 .red::-webkit-scrollbar-thumb:hover {  
 	 background-color: rgb(255, 50, 50);
 	//filter: brightness(430%) ;
 }
-
 .red::-webkit-scrollbar-button {
       background-color: rgb(255, 0, 0); 
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
@@ -80,22 +82,21 @@
 }
 
 .blue::-webkit-scrollbar-track { 
-	background-color: rgb(0, 0, 100);
+	background-color: rgb(43, 72, 138); 
 }
 .blue::-webkit-scrollbar-thumb {
-      background-color: rgb(0, 0, 255); 
+	background-color: rgb(56, 121, 179); 
 } /* this will style the thumb, ignoring the track */
 .blue::-webkit-scrollbar-button {
-      background-color: rgb(0, 0, 255);
+	background-color: rgb(56, 121, 179); 
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
 .blue::selection {
   background: rgb(0, 0, 255);
 }
 .blue::-webkit-scrollbar-thumb:hover {  
-	 background-color: rgb(50, 50, 255);
+	background-color: #6fa3d2; 
 	//filter: brightness(430%) ;
 }
-
 
 .purple::-webkit-scrollbar-track { 
 	background-color:  rgb(140, 0, 140);
@@ -112,12 +113,6 @@
 .purple::-webkit-scrollbar-thumb:hover {  
 	 background-color: rgb(255, 50, 255);
 	//filter: brightness(430%) ;
-}
-
-body {
-	margin: 0px;
-	padding: 0px;
-	scrollbar-face-color: black;
 }
 
 header#main-header {
@@ -137,6 +132,7 @@ header#main-header {
 #menu-button:hover {
 	background-color: #b2b2b2;
 }
+
 .white #menu-button {
 	position: fixed;
 	background-color: #6b6b6b;
@@ -152,7 +148,7 @@ header#main-header {
 
 .orange #menu-button {
 	position: fixed;
-	background-color: rgb(200, 145, 5);
+	background-color: #c16702;
 	top: 5px;
 	left: 5px;
 	cursor: pointer;
@@ -160,7 +156,7 @@ header#main-header {
 	z-index: 10;
 }
 .orange #menu-button:hover {
-	background-color: orange;	 
+	background-color: #fb8502;	 
 }
 
 .red #menu-button {
@@ -176,10 +172,9 @@ header#main-header {
 	background-color: rgb(255, 0, 0);  
 }
 
-
 .blue #menu-button {
 	position: fixed;
-	background-color: rgb(0, 0, 100);
+	background-color: rgb(43, 72, 138); 
 	top: 5px;
 	left: 5px;
 	cursor: pointer;
@@ -187,9 +182,8 @@ header#main-header {
 	z-index: 10;
 }
 .blue #menu-button:hover {
-	background-color: rgb(0, 0, 255);
+	background-color: rgb(56, 121, 179); 
 }
-
 
 .purple #menu-button {
 	position: fixed;
@@ -204,7 +198,6 @@ header#main-header {
 	background-color: rgb(255, 0, 255);
 }
 
-	
 	/* 3 different bars */
 	.bar1, .bar2, .bar3 {
 		width: 30px;
@@ -222,7 +215,6 @@ header#main-header {
 		.change .bar3 {
 			transform: rotate(45deg) translate(-8px, -9px);
 		}
-
 nav#navigation-field {
 	background-color: rgba(40, 40, 40, 0.8);
 	position: fixed;
@@ -247,84 +239,122 @@ nav#navigation-field {
 		}
 			.navigation-button {
 				cursor: pointer;
-				width: 110px;
-				height: 110px;
-				border-color: rgba(120, 120, 120, 0.8);
+				width: 90px;
+				height: 90px;
+				color: white;
+				background-color: rgb(51,51,51);
+				border-color: rgb(41,41,41);
+				border-width: 1px;
 			}
 			#nav-intro-button:hover {
 				background-color: white;  
 			}
+			#nav-intro-button:hover img {
+				filter: grayscale(0%); 
+			}
+			}
 			#nav-books-button:hover {
-				background-color: orange;  
+				background-color:  #fb8502;  
+			}
+			#nav-books-button:hover img {
+				filter: grayscale(0%); 
 			}
 			#nav-video-games-button:hover {
-				background-color: rgb(255, 0, 0);  
+				background-color: rgb(56, 121, 179); 
+			}
+			#nav-video-games-button:hover img {
+				filter: grayscale(0%);
 			}
 			#nav-education-button:hover {
-				background-color: rgb(0, 0, 255);
+				background-color: rgb(255, 0, 0);  
+			}
+			#nav-education-button:hover img {
+				filter: grayscale(0%);
 			}
 			#nav-about-button:hover {
 				background-color: rgb(255, 0, 255);
 			}
+			#nav-about-button:hover img {
+				filter: grayscale(0%);
+			}
 				.nav-button-img {
-					width: 100px;
+					width: 90px;
+					margin-left: -6px;
+					filter: grayscale(100%);
+				}
+				.active .nav-button-img  {
+					filter: grayscale(0%);
 				}
 
 .main-content {
+	background-color: rgb(41,41,41);
 	min-height: 100vh;
 	display: flex;
 	text-align: center;
 	justify-content: center;
 	align-content: center;
 	flex-direction: column;
-}
-
-.intro-content {
-	background-color: rgb(41,41,41);
-	color: white;
-}
- .active .intro-content {
-	background-color: rgb(200,200,200);
+	margin-bottom: 20px;
 	color: white;
 }
 
-.books-content {
-	background-color: rgb(41,41,41);
-	color: white;
-}
- .active .books-content {
-	background-color: orange;
-	color: white;
-}
-
-.video-games-content {
-	background-color: rgb(41,41,41);
-	color: white;
-}
- .active .video-games-content {
-	background-color: rgb(255, 0, 0);
-	color: white;
-}
-
-.education-content {
-	background-color: rgb(41,41,41);
-	color: white;
-}
- .active .education-content {
-	background-color: rgb(0, 0, 255); 
-	color: white;
-}
-
-.about-content {
-	background-color: rgb(41,41,41);
-	color: white;
-}
-.active .about-content {
-    background-color: rgb(255, 0, 255); 
-	color: white;
-}
-
-.section-img {
-	margin-left: 10%; 
-	max-width : 80%;
-}
+	.intro-content {}
+	 .active .intro-content {
+		background-color: rgb(200,200,200);
+		color: white;
+	}
+	
+	#books-content {
+  		background-image: url("../img/floor.jpg");
+		background-color: #753a00;
+	    background-repeat: no-repeat;
+	    background-attachment: fixed;
+	    background-position: center;
+	    background-size: cover;
+	    background-blend-mode: overlay;
+	}
+	.books-content {}
+	.active .books-content {
+		background-color: #fb8502;	
+		color: white;
+	}
+		#book-content-img {
+			margin-left: 10vw; 
+			max-width : 80vw;
+			heigth: 100vh;
+		    background-repeat: no-repeat;
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-size: cover;
+		}
+	
+	
+	#video-games-content {
+  		background-image: url("../img/ps4.jpg");
+	    background-repeat: no-repeat;
+	    background-attachment: fixed;
+	    background-position: center;
+	    background-size: cover;
+	}
+	.video-games-content {}
+	.active .video-games-content {
+		background-color: rgb(56, 121, 179); 
+		color: white;
+	}
+	
+	.education-content {}
+	.active .education-content {
+		background-color: rgb(255, 0, 0);
+		color: white;
+	}
+	
+	.about-content {}
+	.active .about-content {
+	    background-color: rgb(255, 0, 255); 
+		color: white;
+	}
+	
+	.section-img {
+		margin-left: 10%; 
+		max-width : 80%;
+	}

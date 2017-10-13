@@ -32,31 +32,39 @@
 		</header>
 		<nav id="navigation-field"> 
 			<ul id="navigation-field-ul" >
-				<li id="nav-intro" class="intro-content active">
+				<li id="nav-intro" class="nav-color intro-content active">
 					<a href="#intro-content" onclick="buttonScroll('intro-content'); return false;">
-						<button id="nav-intro-button" class="navigation-button intro-content">Intro</button>
-					</a>
-				</li>
-				<li id="nav-books" class="books-content">
-					<a href="#books-content" onclick="buttonScroll('books-content'); return false;">
-						<button id="nav-books-button" class="navigation-button books-content">
-							<img class="nav-button-img" alt="book-icon" src="img/icon/book.png">Books</img>
+						<button id="nav-intro-button" class="navigation-button intro-content">
+							<img class="nav-button-img" alt="education-icon" src="img/icon/home.png"></img>
 						</button>
 					</a>
 				</li>
-				<li id="nav-video-games" class="video-games-content">
+				<li id="nav-books" class="nav-color books-content">
+					<a href="#books-content" onclick="buttonScroll('books-content'); return false;">
+						<button id="nav-books-button" class="navigation-button books-content">
+							<img id="nav-books-img" class="nav-button-img" alt="book-icon" src="img/icon/book.png"></img>
+						</button>
+					</a>
+				</li>
+				<li id="nav-video-games" class="nav-color video-games-content">
 					<a href="#video-games-content" onclick="buttonScroll('video-games-content'); return false;">
-						<button id="nav-video-games-button" class="navigation-button video-games-content">Video Games</button>
+						<button id="nav-video-games-button" class="navigation-button video-games-content">
+							<img class="nav-button-img" alt="game-icon" src="img/icon/game-controller9.png"></img>
+						</button>
 					</a>
 				</li>
-				<li id="nav-education" class="education-content">
+				<li id="nav-education" class="nav-color education-content">
 					<a href="#education-content" onclick="buttonScroll('education-content'); return false;">
-						<button id="nav-education-button" class="navigation-button education-content">Education</button>
+						<button id="nav-education-button" class="navigation-button education-content">
+							<img class="nav-button-img" alt="education-icon" src="img/icon/education.png"></img>
+						</button>
 					</a>
 				</li>
-				<li id="nav-about" class="about-content">
+				<li id="nav-about" class="nav-color about-content">
 					<a href="#about-content" onclick="buttonScroll('about-content'); return false;">
-						<button id="nav-about-button" class="navigation-button about-content">About</button>
+						<button id="nav-about-button" class="navigation-button about-content">
+							<img class="nav-button-img" alt="about-icon" src="img/icon/about.png"></img>
+						</button>
 					</a>
 				</li>
 			</ul>
@@ -65,7 +73,7 @@
 		<main id="main-content"> 
 			<section id="intro-content" class="white main-content intro-content">Welcome<br>to<br>Jonas portfolio!</section>
 			<section id="books-content" class="orange main-content books-content">
-				<img class="section-img" alt="book-icon" src="img/book.png"></img>
+				<img id="book-content-img"  class="" alt="book-icon" src="img/book.png"></img>
 			</section>
 			<section id="video-games-content" class="red main-content video-games-content">Video Games</section>
 			<section id="education-content" class="blue main-content education-content">Education</section>

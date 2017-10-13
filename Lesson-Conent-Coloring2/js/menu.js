@@ -29,7 +29,7 @@ function menuSize() {
 	if (toggleNavigationBar) {
 		document.getElementById("navigation-field").style.transition = "0.3s";
 		document.getElementById("navigation-field").style.opacity = "1";
-		document.getElementById("navigation-field").style.width = "120px";
+		document.getElementById("navigation-field").style.width = "100px";
 		document.getElementById("navigation-field").style.height = "100vh";
 	} else {
 		document.getElementById("navigation-field").style.transitionDelay = "0.1s";
@@ -47,7 +47,7 @@ var scrollButton = false;
  */
 function scrollToItem(element) {
 	// Detects where the element is compared to the top of the screen.
-	var diff = (element.offsetTop - window.scrollY) / 8;
+	var diff = (element.offsetTop - window.scrollY) / 6;
 	
 	if (Math.abs(diff) > 1) {
 		window.scrollTo(0, (window.scrollY + diff));
@@ -140,15 +140,15 @@ function changeColorScroller(el) {
 	} else if (el.id == "video-games-content") {
 		currentNavButton = "nav-video-games";
 		currentNavButtonClass = "video-games-content";
-		document.getElementById("nav-video-games").className = "red video-games-content active";
-		currentScrollCollor = "red"; 
-		body.classList.add("red");
+		document.getElementById("nav-video-games").className = "blue video-games-content active";
+		currentScrollCollor = "blue"; 
+		body.classList.add("blue");
 	} else if (el.id == "education-content") {
 		currentNavButton = "nav-education";
 		currentNavButtonClass = "education-content";
-		document.getElementById("nav-education").className = "blue education-content active";
-		currentScrollCollor = "blue"; 
-		body.classList.add("blue");
+		document.getElementById("nav-education").className = "red education-content active";
+		currentScrollCollor = "red"; 
+		body.classList.add("red");
 	} else if (el.id == "about-content")  {
 		currentNavButton = "nav-about";
 		currentNavButtonClass = "about-content";
