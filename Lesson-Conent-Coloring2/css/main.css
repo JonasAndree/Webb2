@@ -1,34 +1,40 @@
 body {
 	margin: 0px;
-	adding: 0px;
+	padding: 0px;
 	background-color: rgb(41,41,41);
+	overflow-x: hidden;
 }
 button {
-  outline: none;
+	outline: none;
 }
-::-webkit-scrollbar {
-      width: 10px;
-} /* this targets the default scrollbar (compulsory) */
 
+::-webkit-scrollbar {
+	width: 10px;
+}
 ::-webkit-scrollbar-track  { 
 	background-color: rgb(140, 140, 140);  
 }
 ::-webkit-scrollbar-thumb {
-      background-color: rgb(240, 240, 240); 
-} /* this will style the thumb, ignoring the track */
+	background-color: rgb(240, 240, 240); 
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+} 
 ::-webkit-scrollbar-button {
-      background-color: rgb(240, 240, 240);  
-} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+	background-color: rgb(240, 240, 240);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 1px;
+    border-radius: 1px;  
+} 
 ::-webkit-scrollbar-corner {
-      background-color: black;
+	background-color: black;
 } 
 ::selection {
-  background: rgb(240, 240, 240); 
+	background: rgb(240, 240, 240); 
 }
 
 .white::-webkit-scrollbar-thumb:hover {  
 	 background-color: rgb(255, 255, 255);
-	//filter: brightness(430%) ;
 }
 .white::-webkit-scrollbar-track  { 
 	background-color: rgb(140, 140, 140);  
@@ -40,45 +46,42 @@ button {
       background-color: rgb(240, 240, 240); 
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
 .white::selection {
-  background: rgb(240, 240, 240); 
+	background: rgb(240, 240, 240); 
 }
 .white::-webkit-scrollbar-thumb:hover {  
-	 background-color: rgb(255, 255, 255);
-	//filter: brightness(430%) ;
+	background-color: rgb(255, 255, 255);
 }
 
 .orange::-webkit-scrollbar-track { 
 	background-color: #c16702;
 }
 .orange::-webkit-scrollbar-thumb {
-      background-color: #fb8502;
+	background-color: #fb8502;
 } /* this will style the thumb, ignoring the track */
 .orange::-webkit-scrollbar-button {
-      background-color: #fb8502;
+	background-color: #fb8502;
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
 .orange::selection {
-  background: orange;
+	background: orange;
 }
 .orange::-webkit-scrollbar-thumb:hover {  
-	 background-color: rgb(255, 185, 100);
-	//filter: brightness(430%) ;
+	background-color: rgb(255, 185, 100);
 }
 
 .red::-webkit-scrollbar-track { 
 	background-color: rgb(140, 0, 0); ; 
 }
 .red::-webkit-scrollbar-thumb {
-      background-color: rgb(255, 0, 0); 
+	background-color: rgb(255, 0, 0); 
 } /* this will style the thumb, ignoring the track */
 .red::-webkit-scrollbar-thumb:hover {  
-	 background-color: rgb(255, 50, 50);
-	//filter: brightness(430%) ;
+	background-color: rgb(255, 50, 50);
 }
 .red::-webkit-scrollbar-button {
-      background-color: rgb(255, 0, 0); 
+	background-color: rgb(255, 0, 0); 
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
 .red::selection {
-  background: rgb(255, 0, 0); 
+	background: rgb(255, 0, 0); 
 }
 
 .blue::-webkit-scrollbar-track { 
@@ -91,28 +94,26 @@ button {
 	background-color: rgb(56, 121, 179); 
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
 .blue::selection {
-  background: rgb(0, 0, 255);
+	background: rgb(0, 0, 255);
 }
 .blue::-webkit-scrollbar-thumb:hover {  
 	background-color: #6fa3d2; 
-	//filter: brightness(430%) ;
 }
 
 .purple::-webkit-scrollbar-track { 
 	background-color:  rgb(140, 0, 140);
 }
 .purple::-webkit-scrollbar-thumb {
-      background-color:  rgb(255, 0, 255); 
+	background-color:  rgb(255, 0, 255); 
 } 
 .purple::-webkit-scrollbar-button {
-      background-color: rgb(255, 0, 255); 
+	background-color: rgb(255, 0, 255); 
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
 .purple::selection {
-  background: rgb(255, 0, 255);
+	background: rgb(255, 0, 255);
 }
 .purple::-webkit-scrollbar-thumb:hover {  
-	 background-color: rgb(255, 50, 255);
-	//filter: brightness(430%) ;
+	background-color: rgb(255, 50, 255);
 }
 
 header#main-header {
@@ -127,7 +128,8 @@ header#main-header {
 	left: 5px;
 	cursor: pointer;
 	padding: 0px 6px 0px 6px;
-	z-index: 10;
+	z-index: 40;
+	
 }
 #menu-button:hover {
 	background-color: #b2b2b2;
@@ -140,7 +142,7 @@ header#main-header {
 	left: 5px;
 	cursor: pointer;
 	padding: 0px 6px 0px 6px;
-	z-index: 10;
+	z-index: 40;
 }
 .white #menu-button:hover {
 	background-color: #b2b2b2;
@@ -153,7 +155,7 @@ header#main-header {
 	left: 5px;
 	cursor: pointer;
 	padding: 0px 6px 0px 6px;
-	z-index: 10;
+	z-index: 40;
 }
 .orange #menu-button:hover {
 	background-color: #fb8502;	 
@@ -166,7 +168,7 @@ header#main-header {
 	left: 5px;
 	cursor: pointer;
 	padding: 0px 6px 0px 6px;
-	z-index: 10;
+	z-index: 40;
 }
 .red #menu-button:hover {
 	background-color: rgb(255, 0, 0);  
@@ -179,7 +181,8 @@ header#main-header {
 	left: 5px;
 	cursor: pointer;
 	padding: 0px 6px 0px 6px;
-	z-index: 10;
+	z-index: 40;
+	
 }
 .blue #menu-button:hover {
 	background-color: rgb(56, 121, 179); 
@@ -192,7 +195,7 @@ header#main-header {
 	left: 5px;
 	cursor: pointer;
 	padding: 0px 6px 0px 6px;
-	z-index: 10;
+	z-index: 40;
 }
 .purple #menu-button:hover {
 	background-color: rgb(255, 0, 255);
@@ -224,6 +227,7 @@ nav#navigation-field {
 	opacity: 0; top : 0px;
 	position: fixed;
 	top: 0px;
+  	z-index: 22;
 }
 	nav#navigation-field ul {
 		list-style-type: none;
@@ -246,45 +250,22 @@ nav#navigation-field {
 				border-color: rgb(41,41,41);
 				border-width: 1px;
 			}
-			#nav-intro-button:hover {
-				background-color: white;  
-			}
-			#nav-intro-button:hover img {
-				filter: grayscale(0%); 
-			}
-			}
-			#nav-books-button:hover {
-				background-color:  #fb8502;  
-			}
-			#nav-books-button:hover img {
-				filter: grayscale(0%); 
-			}
-			#nav-video-games-button:hover {
-				background-color: rgb(56, 121, 179); 
-			}
-			#nav-video-games-button:hover img {
-				filter: grayscale(0%);
-			}
-			#nav-education-button:hover {
-				background-color: rgb(255, 0, 0);  
-			}
-			#nav-education-button:hover img {
-				filter: grayscale(0%);
-			}
-			#nav-about-button:hover {
-				background-color: rgb(255, 0, 255);
-			}
-			#nav-about-button:hover img {
-				filter: grayscale(0%);
-			}
+			#nav-intro-button:hover { background-color: white; }
+			#nav-intro-button:hover img { filter: grayscale(0%); } 
+			#nav-books-button:hover { background-color:  #fb8502; }
+			#nav-books-button:hover img { filter: grayscale(0%); }
+			#nav-video-games-button:hover { background-color: rgb(56, 121, 179);  }
+			#nav-video-games-button:hover img { filter: grayscale(0%); }
+			#nav-education-button:hover { background-color: rgb(255, 0, 0);  }
+			#nav-education-button:hover img { filter: grayscale(0%); }
+			#nav-about-button:hover { background-color: rgb(255, 0, 255); }
+			#nav-about-button:hover img { filter: grayscale(0%); }
 				.nav-button-img {
 					width: 90px;
 					margin-left: -6px;
 					filter: grayscale(100%);
 				}
-				.active .nav-button-img  {
-					filter: grayscale(0%);
-				}
+				.active .nav-button-img  { filter: grayscale(0%); }
 
 .main-content {
 	background-color: rgb(41,41,41);
@@ -321,16 +302,15 @@ nav#navigation-field {
 		#book-content-img {
 			margin-left: 10vw; 
 			max-width : 80vw;
-			heigth: 100vh;
+			height: 100vh;
 		    background-repeat: no-repeat;
-		    background-attachment: fixed;
 		    background-position: center;
 		    background-size: cover;
 		}
 	
 	
 	#video-games-content {
-  		background-image: url("../img/ps4.jpg");
+  		background-image: url("../img/playstation-4-wallpaper.jpg");
 	    background-repeat: no-repeat;
 	    background-attachment: fixed;
 	    background-position: center;
@@ -341,6 +321,72 @@ nav#navigation-field {
 		background-color: rgb(56, 121, 179); 
 		color: white;
 	}
+		#video-games-content {
+			display: flex;
+			justify-content: center;
+		}
+		#game-container {
+			overflow: hidden;
+			height: 300px;
+  			display: inline-block;
+  			width: 100vw;
+  			max-width: 100vw;
+  			z-index: 20;
+			cursor: pointer;
+		}
+		.game {
+			position: absolute;
+			background-color: rgb(41,41,41);
+			width: 220px;
+			height: 270px;
+			margin-top: 30px;
+  			z-index: 21;
+			filter: grayscale(100%);		    
+			background-repeat: no-repeat;
+		    background-position: center;
+		    background-size: cover;
+			transition: 0.1s;
+		}
+			.active-game {
+				filter: grayscale(0%);
+				margin-top: 10px;
+				margin-left: -5px;
+				width: 230px;
+				height: 310px; 
+				box-shadow: 10px 10px 91px 4px rgba(82,206,255,0.80);
+				background-repeat: no-repeat;
+		    	background-position: center;
+		    	background-size: cover;
+			}
+		#sins { background-image: url("../img/sins.jpg"); }
+		#destiny { background-image: url("../img/destiny.png"); }
+		#destiny-2 { background-image: url("../img/destiny2.jpg"); }
+		#starcraft { background-image: url("../img/StarCraft.jpg"); }
+		#starcraft-2 { background-image: url("../img/StarCraft2.jpg"); }
+		#dibalo-2 { background-image: url("../img/Diablo2.png"); }
+		#dibalo-3 { background-image: url("../img/diablo3.jpg"); }
+		#f-f-7 { background-image: url("../img/ff7.jpg"); }
+		#f-f-8 { background-image: url("../img/ff8.jpg"); }
+		#sonic-2 { background-image: url("../img/Sonic2.jpg"); }
+		#super-mario-2 { background-image: url("../img/Super_Mario_Bros_2.jpg"); }
+		#super-mario-3 { background-image: url("../img/super3.jpg"); }
+			.game-text-container {
+				position: absolute;
+				top: 320px;
+				left: 0px;
+				background-color: rgba(31,31,31,0.8);
+				padding: 20px; 
+				text-align: left;
+				opacity: 0;
+			}
+			 .active-game .game-text-container { 
+			 	transition: 0.6s;
+				opacity: 1;
+				width: 40vw;
+			}
+	
+	
+	
 	
 	.education-content {}
 	.active .education-content {
@@ -357,4 +403,14 @@ nav#navigation-field {
 	.section-img {
 		margin-left: 10%; 
 		max-width : 80%;
+	}
+
+	
+	#line {
+		position: fixed;
+		background-color: red;
+		width: 10px;
+		height: 100vh;
+		left: 50vw;
+		top: 0px;
 	}

@@ -1,8 +1,172 @@
 
+/**
+ * mikaelai@kth.se
+ * 
+ */
+
+
+
 var currentState;
 
 var toggleNavigationBar = false;
 menuSize();
+
+var x;
+var newX;
+var gameContainer = document.getElementById("game-container");
+var gameContainerChildren = gameContainer.children;
+var diff = 0;
+var startPosition = [];
+var activeGameElement;
+var drag = false;
+
+
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        //console.log("up arrow");
+    }
+    else if (e.keyCode == '40') {
+        //console.log("down arrow");
+    }
+    else if (e.keyCode == '37') {
+        for (var i = 0; i < gameContainerChildren.length; i++) {
+    		gameContainerChildren[i].style.transition = "0.3s";
+        	if(activeGameElement == gameContainerChildren[i]) {
+	    		if (i != 0) {
+	    			startPosition[i] = parseInt(gameContainerChildren[i - 1].style.left);
+	    			if(drag == false) {
+	    				activeGameElement.className = "game";
+	    				activeGameElement = gameContainerChildren[i - 1];
+	    				activeGameElement.className = "game active-game";
+	    				gameMouseUp();
+	    				break;
+	    			}
+	    		}
+        	}
+    	}
+    }
+    else if (e.keyCode == '39') {
+        for (var i = 0; i < gameContainerChildren.length; i++) {
+    		gameContainerChildren[i].style.transition = "0.3s";
+        	if(activeGameElement == gameContainerChildren[i]) {
+	    		if (i != gameContainerChildren.length - 1) {
+	    			startPosition[i] = parseInt(gameContainerChildren[i + 1].style.left);
+	    			if(drag == false) {
+	    				activeGameElement.className = "game";
+	    				activeGameElement = gameContainerChildren[i + 1];
+	    				activeGameElement.className = "game active-game";
+	    				gameMouseUp();
+	    				break;
+	    			}
+	    		}
+        	}
+    	}
+        
+    }
+    else if (e.keyCode == '9') {
+    	toggleMenu(document.getElementById("menu-button"));
+    }
+
+}
+
+
+
+gameContainer.addEventListener("mousedown", function(event) {
+	x = event.clientX;
+});
+gameContainer.addEventListener("mousemove", function(event) {
+	
+	if(x > 0) {
+		newX = event.clientX;
+		modifyGamePosition(newX - x);
+		setActiveGameElement();
+		drag = true;	
+	}
+	newX = 0;
+});
+
+function setActiveGameElement() {
+	for (var i = 0; i < gameContainerChildren.length; i++) {
+		var elementPosLeft = gameContainerChildren[i].offsetLeft;
+		var elementPosRight = gameContainerChildren[i].offsetRight;
+		var halfWindowWidth = window.innerWidth/2;
+		if (elementPosLeft < halfWindowWidth  || elementPosRight > halfWindowWidth ) {
+			activeGameElement.className = "game";
+			activeGameElement = gameContainerChildren[i];
+			activeGameElement.className = "game active-game";
+		} 
+	}
+}
+
+function scrollToItemVerticly(element) {
+	modifyGamePosition((window.innerWidth/2) - parseInt(activeGameElement.style.left) - 115);
+}
+
+
+gameContainer.addEventListener("mouseup", function() {
+	gameMouseUp();
+	drag = false;
+});
+
+function gameMouseUp() {
+	x = 0;
+	newX = 0;
+	diff = 0;
+	setStartPosition();
+	scrollToItemVerticly(activeGameElement);
+	setStartPosition();
+}
+
+
+
+function setStartPosition() {
+	for (var i = 0; i < gameContainerChildren.length; i++) {
+		gameContainerChildren[i].style.transition = "0.3s";
+		startPosition[i] = parseInt(gameContainerChildren[i].style.left);
+	}
+}
+/**
+ * 
+ * @param element
+ * @returns
+ */
+function elementClicked(element) {
+	if(drag == false) {
+		activeGameElement.className = "game";
+		activeGameElement = element;
+		activeGameElement.className = "game active-game";
+		gameMouseUp();
+	}
+}
+
+setGamePositions();
+function setGamePositions() {
+	var margin = 60;
+	var width = 220;
+	var left = 0;
+	for (var i = 0; i < gameContainerChildren.length; i++) {
+		left += width + margin;
+		gameContainerChildren[i].style.left = left + "px";
+		startPosition.push(left);
+		if(gameContainerChildren[i].className == "game active-game")
+			activeGameElement = gameContainerChildren[i];
+	}
+	scrollToItemVerticly();
+}
+
+
+function modifyGamePosition(diff) {
+	for (var i = 0; i < gameContainerChildren.length; i++) {
+		gameContainerChildren[i].style.transition = "0.0s";
+		gameContainerChildren[i].style.left = startPosition[i] + diff + "px";
+	}
+}
+
 /**
  * 
  * @param event
@@ -97,7 +261,7 @@ window.addEventListener('scroll', function() {
 	}
 });
 /**
- * Function that detekts if an element is sopose to be in wiew.
+ * Function that detects if an element is suppose to be in view.
  * 
  * @param el
  * @returns null
@@ -157,3 +321,7 @@ function changeColorScroller(el) {
 		body.classList.add("purple");
 	}
 }
+
+
+
+
