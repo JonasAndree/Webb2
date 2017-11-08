@@ -322,6 +322,59 @@ function changeColorScroller(el) {
 	}
 }
 
+var scrollKTHVisible = false;
+var scrollSUVisible
 
+
+var scrollImageArray = [];
+
+for (var i = 1; i < 60; i++) {
+	var image = document.createElement("DIV");
+	image.className = "scroll-content";
+	image.id = "scroll-id-"+i;
+	image.addEventListener("click", animateScroll(document.getElementById("civil-content"), "KTH"));
+	
+	 if(i < 10) {
+		 image.style.backgroundImage = "url(img/KTHScroll/000"+i+".png)";
+	} else { 
+		image.style.backgroundImage = "url(img/KTHScroll/00"+i+".png)";
+	}
+	scrollImageArray.push(image);
+}
+document.getElementById("civil-content").appendChild(scrollImageArray[58]);
+
+console.log(document.getElementById("civil-content"));
+
+function animateScroll(container, scrollType) {
+	
+	if (scrollKTHVisible == false)
+		animateScroll2(container, 1, scrollKTHVisible)
+	else 
+		animateScroll2(container, 58, scrollKTHVisible)
+		
+	if (scrollType == "KTH") 
+		scrollKTHVisible = !scrollKTHVisible;
+	else if (scrollType == "SU")
+		scrollSUVisible = !scrollSUVisible;
+}
+function animateScroll2(container, index, visible) {
+	console.log(index);
+	var savedIndex = index;
+	if (visible == false)
+		index++;
+	else 
+		index--;
+	if(index < 1 || index > 58) {
+		
+	} else if(index < 10) {
+		container.removeChild(container.childNodes[1]);
+		container.appendChild(scrollImageArray[index]);
+		setTimeout(animateScroll2, 20, container, index, visible);
+	} else { 
+		container.removeChild(container.childNodes[1]);
+		container.appendChild(scrollImageArray[index]);
+		setTimeout(animateScroll2, 20, container, index, visible);
+	}
+}
 
 

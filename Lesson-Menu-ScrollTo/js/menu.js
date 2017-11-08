@@ -66,17 +66,38 @@ function menuSize() {
 	}
 }
 
-function scrollToItem(item) {
-	var diff = (item.offsetTop - window.scrollY) / 8;
+
+var scrollButton;
+/**
+ * Functions that scrolls to a element.
+ * 
+ * @param element
+ * @returns
+ */
+function scrollToItem(element) {
+	// Detects where the element is compared to the top of the screen.
+	var diff = (element.offsetTop - window.scrollY) / 8;
+	
 	if (Math.abs(diff) > 1) {
-		window.scrollTo(0, (window.scrollY + diff))
-		clearTimeout(window._TO)
-		window._TO = setTimeout(scrollToItem, 30, item)
+		window.scrollTo(0, (window.scrollY + diff));
+		clearTimeout(window._TO);
+		window._TO = setTimeout(scrollToItem, 10, element);
 	} else {
-		window.scrollTo(0, item.offsetTop)
+		window.scrollTo(0, element.offsetTop);
+		scrollButton = false;
 	}
 }
-
-function scroll(elID) {
+var stateObj = { index: "index" };
+/**
+ * If we need to scroll to an element.
+ * 
+ * @param elID
+ * @returns
+ */
+function buttonScroll(elID) {
+	scrollButton = true;
+	//document.getElementById(elID).className = "active";
+	//changeColorScroller(document.getElementById(elID))
 	scrollToItem(document.getElementById(elID));
+	//scrollHistory(elID);
 }

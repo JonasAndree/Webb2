@@ -68,8 +68,9 @@ var stateObj = { index: "index" };
 function buttonScroll(elID) {
 	scrollButton = true;
 	//document.getElementById(elID).className = "active";
-	changeColorScroller(document.getElementById(elID))
-	scrollHistory(elID);
+	//changeColorScroller(document.getElementById(elID))
+	scrollToItem(document.getElementById(elID));
+	//scrollHistory(elID);
 }
 /**
  * 
@@ -77,8 +78,8 @@ function buttonScroll(elID) {
  * @returns
  */
 function scrollHistory(elID) {
-	currentState = elID;
-	history.pushState(stateObj, elID, "index.html#" + elID);
+	//currentState = elID;
+	//history.pushState(stateObj, elID, "index.html#" + elID);
 	scrollToItem(document.getElementById(elID));
 }
 

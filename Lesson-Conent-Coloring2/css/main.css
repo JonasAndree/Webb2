@@ -7,6 +7,9 @@ body {
 button {
 	outline: none;
 }
+h1 {
+	margin:0px;
+}
 
 ::-webkit-scrollbar {
 	width: 10px;
@@ -69,19 +72,19 @@ button {
 }
 
 .red::-webkit-scrollbar-track { 
-	background-color: rgb(140, 0, 0); ; 
+	background-color: #103669;
 }
 .red::-webkit-scrollbar-thumb {
-	background-color: rgb(255, 0, 0); 
+	background-color: rgb(26,84,166);
 } /* this will style the thumb, ignoring the track */
 .red::-webkit-scrollbar-thumb:hover {  
-	background-color: rgb(255, 50, 50);
+	background-color: #659ce7;
 }
 .red::-webkit-scrollbar-button {
-	background-color: rgb(255, 0, 0); 
+	background-color: rgb(26,84,166);
 } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
 .red::selection {
-	background: rgb(255, 0, 0); 
+	background-color: rgb(26,84,166);
 }
 
 .blue::-webkit-scrollbar-track { 
@@ -163,7 +166,7 @@ header#main-header {
 
 .red #menu-button {
 	position: fixed;
-	background-color: rgb(140, 0, 0); 
+	background-color: #659ce7;
 	top: 5px;
 	left: 5px;
 	cursor: pointer;
@@ -171,7 +174,7 @@ header#main-header {
 	z-index: 40;
 }
 .red #menu-button:hover {
-	background-color: rgb(255, 0, 0);  
+	background-color: rgb(26,84,166);
 }
 
 .blue #menu-button {
@@ -256,7 +259,7 @@ nav#navigation-field {
 			#nav-books-button:hover img { filter: grayscale(0%); }
 			#nav-video-games-button:hover { background-color: rgb(56, 121, 179);  }
 			#nav-video-games-button:hover img { filter: grayscale(0%); }
-			#nav-education-button:hover { background-color: rgb(255, 0, 0);  }
+			#nav-education-button:hover { background-color: rgb(26,84,166); }
 			#nav-education-button:hover img { filter: grayscale(0%); }
 			#nav-about-button:hover { background-color: rgb(255, 0, 255); }
 			#nav-about-button:hover img { filter: grayscale(0%); }
@@ -363,6 +366,10 @@ nav#navigation-field {
 		#destiny-2 { background-image: url("../img/destiny2.jpg"); }
 		#starcraft { background-image: url("../img/StarCraft.jpg"); }
 		#starcraft-2 { background-image: url("../img/StarCraft2.jpg"); }
+		#baldurs-gate { background-image: url("../img/BaldursGate.png"); }
+		#baldurs-gate-2 { background-image: url("../img/BaldursGate2.jpg"); }
+		#dragon-age { background-image: url("../img/DragonAgeOrigins.png"); }
+		#dragon-age-2 { background-image: url("../img/dragonage2.jpg"); }
 		#dibalo-2 { background-image: url("../img/Diablo2.png"); }
 		#dibalo-3 { background-image: url("../img/diablo3.jpg"); }
 		#f-f-7 { background-image: url("../img/ff7.jpg"); }
@@ -378,19 +385,91 @@ nav#navigation-field {
 				padding: 20px; 
 				text-align: left;
 				opacity: 0;
+				max-height: 120px;
+				overflow: auto;
+				cursor: default;
 			}
 			 .active-game .game-text-container { 
 			 	transition: 0.6s;
 				opacity: 1;
 				width: 40vw;
 			}
+
+			.active-game .game-text-container::-webkit-scrollbar-track { 
+				background-color: rgb(43, 72, 138); 
+			}
+			.active-game .game-text-container::-webkit-scrollbar-thumb {
+				background-color: rgb(56, 121, 179); 
+			} /* this will style the thumb, ignoring the track */
+			.active-game .game-text-container::-webkit-scrollbar-button {
+				background-color: rgb(56, 121, 179); 
+			} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+			.active-game .game-text-container::selection {
+				background: rgb(0, 0, 255);
+			}
+			.active-game .game-text-container::-webkit-scrollbar-thumb:hover {  
+				background-color: #6fa3d2; 
+			}	
 	
 	
 	
-	
-	.education-content {}
+	#education-content {
+	    
+	}
+		#techer-content {
+			position: absolute;
+			background-color: white;
+		}
+			#su-logo {
+				background-color: white;
+				background-image: url("../img/SUlogo.png");
+			}
+			#su-scroll {
+				background-image: url("../img/0001.png");
+			}
+		#civil-content {
+			position: absolute;
+			left: 50vw;
+			background-color: #1a54a6;
+		}
+			#kth-logo {
+				background-image: url("../img/KTHlogo.jpg");
+			}
+			#kth-scroll {
+				background-image: url("../img/scroll60.png");
+			}
+		.exam-content {
+			width: 50vw;
+			height: 100vh;
+			display: flex;
+			text-align: center;
+			justify-content: center;
+			align-content: center;
+			flex-direction: column;
+		}
+		.logo-container {
+		}
+			.logo-content {
+				background-repeat: no-repeat;
+			    background-position: center;
+			    background-size: cover;
+			    width: 20vw;
+			    height: 20vw;
+			    border: none;
+			}
+				.scroll-content {
+					position: absolute;
+					background-repeat: no-repeat;
+				    background-position: center;
+				    background-size: contain;
+				    width: 40vw;
+				    height: 90vh;
+				    bottom: 5vh;
+				    left: 5vw;
+				}
+		
 	.active .education-content {
-		background-color: rgb(255, 0, 0);
+		background-color:  rgb(26,84,166);
 		color: white;
 	}
 	
