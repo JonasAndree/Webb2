@@ -1,0 +1,253 @@
+<!-- Declares that HTML5 is used -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Jonas Portfolio</title>
+		<meta name="description" content="My portfolio" />
+		<meta name="keywords" content="Learning HTML, CSS and JavaScript" />
+		<meta name="author" content="Jonas Andrée" />
+		
+		<!-- HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
+		     The viewport is the user's visible area of a web page. It varies with the device, 
+		     and will be smaller on a mobile phone than on a computer screen. 
+		     You should include the following <meta> viewport element in all your web pages:
+		     -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!-- CSS In this course you have to order your styling in a separate stylesheet file (css in a css folder). -->
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+				
+	</head>
+	
+	<body  onload="showPage()">
+		<header id="main-header">
+			
+			<div id="menu-button" class="menu-button" onclick="toggleMenu(this)">
+			  	<div class="bar1"></div>
+			  	<div class="bar2"></div>
+			  	<div class="bar3"></div>
+			</div>
+			
+		</header>
+		<nav id="navigation-field"> 
+			<ul id="navigation-field-ul" >
+				<li id="nav-intro" class="nav-color intro-content active">
+					<a href="#intro-content" onclick="buttonScroll('intro-content'); return false;">
+						<button id="nav-intro-button" class="navigation-button intro-content">
+							<img class="nav-button-img" alt="education-icon" src="img/icon/home.png"></img>
+						</button>
+					</a>
+				</li>
+				<li id="nav-books" class="nav-color books-content">
+					<a href="#books-content" onclick="buttonScroll('books-content'); return false;">
+						<button id="nav-books-button" class="navigation-button books-content">
+							<img id="nav-books-img" class="nav-button-img" alt="book-icon" src="img/icon/book.png"></img>
+						</button>
+					</a>
+				</li>
+				<li id="nav-video-games" class="nav-color video-games-content">
+					<a href="#video-games-content" onclick="buttonScroll('video-games-content'); return false;">
+						<button id="nav-video-games-button" class="navigation-button video-games-content">
+							<img class="nav-button-img" alt="game-icon" src="img/icon/game-controller9.png"></img>
+						</button>
+					</a>
+				</li>
+				<li id="nav-education" class="nav-color education-content">
+					<a href="#education-content" onclick="buttonScroll('education-content'); return false;">
+						<button id="nav-education-button" class="navigation-button education-content">
+							<img class="nav-button-img" alt="education-icon" src="img/icon/Scrollroled.png"></img>
+						</button>
+					</a>
+				</li>
+				<li id="nav-about" class="nav-color about-content">
+					<a href="#about-content" onclick="buttonScroll('about-content'); return false;">
+						<button id="nav-about-button" class="navigation-button about-content">
+							<img class="nav-button-img" alt="about-icon" src="img/icon/about.png"></img>
+						</button>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<main id="main-content"> 
+			<section id="intro-content" class="white main-content intro-content">
+				 Welcome<br>to<br> Jonas portfolio!
+				<div id="loader"></div>
+			</section> 
+			
+			<section id="books-content" class="orange main-content books-content">
+				<img id="book-content-img"  class="" alt="book-icon" src="img/book.png"></img>
+			</section>
+			<section id="video-games-content" class="blue main-content video-games-content  ">
+				
+				<div id="game-wrapper">
+					<div id="game-container">
+						<div id="sins" class="game"  onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Sins of a Solar Empire</h1>
+								<p>Släpptes första gången: 4 februari 2008</p>
+								<p>Utvecklare: Ironclad Games</p>	
+								<p>Utgivare: Stardock</p>
+							</div>
+						</div>
+						<div id="destiny" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Destiny 1</h1>
+								<p>Destiny är ett MMO-actionrollspel utvecklat av Bungie 
+								och gavs ut av Activision den 9 september 2014</p>
+							</div>
+						</div>
+						<div id="destiny-2" class="game active-game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Destiny 2</h1>
+								<p>Släpptes första gången: 6 september 2017</p>
+								<p>Utvecklare: Bungie</p>
+								<p>Utgivare: Activision</p>
+							</div>
+						</div>
+						<div id="starcraft" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Starcraft</h1>
+								<p>Starcraftserien är en dator- och TV-spelsserie bestående av 
+								science fiction-spel. Serien har funnits sedan 1998.</p>
+							</div>
+						</div>
+						<div id="starcraft-2" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Starcraft II: Wings of Liberty</h1>
+								<p>Starcraft II: Wings of Liberty är ett datorspel och den första 
+								av uppföljarna till Blizzards realtidsstrategispel Starcraft. 
+								Spelet släpptes den 27 juli 2010.</p>
+							</div>
+						</div>
+						<div id="baldurs-gate" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Baldur's Gate</h1>
+								<p>Baldur's Gate is a fantasy role-playing video game developed 
+								by BioWare and published in 1998 by Interplay Entertainment. 
+								It is the first game in the Baldur's Gate series and takes place in 
+								the Forgotten Realms, a high fantasy campaign setting, using a 
+								modified version of the Advanced Dungeons & Dragons (AD&D) 2nd 
+								edition rules.</p>
+							</div>
+						</div>
+						<div id="baldurs-gate-2" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Baldur's Gate II: Shadows of Amn</h1>
+								<p>Baldur's Gate II: Shadows of Amn is a role-playing video game 
+								developed by BioWare and published by Black Isle Studios. 
+								It is the sequel to Baldur's Gate (1998) and was released for 
+								Microsoft Windows in September 2000. Like Baldur's Gate, the 
+								game is set in the Forgotten Realms campaign setting and is 'based 
+								on the Advanced Dungeons & Dragons 2nd edition rule set. </p>
+							</div>
+						</div>
+						<div id="dragon-age" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Dragon Age</h1>
+								<p>Dragon Age is a high fantasy role-playing video game series created 
+								by BioWare. The first game, Dragon Age: Origins, was released in 2009.</p>
+							</div>
+						</div>
+						<div id="dragon-age-2" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Dragon Age II</h1>
+								<p>Dragon Age II is an action role-playing video game developed by 
+								BioWare and published by Electronic Arts for Microsoft Windows, 
+								PlayStation 3, Xbox 360 and OS X. It is the second major game in 
+								the Dragon Age series, and was released worldwide in March 2011.</p>
+							</div>
+						</div>
+						<div id="dibalo-2" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Diablo II</h1>
+								<p>Diablo II är en uppföljare till spelet Diablo, 
+								spelet är ett mörkt hack 'n slash och RPG som går ut på att 
+								döda Diablo och hans bröder, plus demoniska undersåtar till 
+								dessa för att rädda världen undan ondskan.</p>
+							</div>
+						</div>
+						<div id="dibalo-3" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Diablo III</h1>
+								<p>Diablo III är ett actionspel med fantasy- och skräcktema 
+								och är den tredje titeln i Blizzard Entertainments Diabloserie. 
+								Spelet offentliggjordes på Blizzard Worldwide Invitational i 
+								Paris den 28 juni 2008.</p>
+							</div>
+						</div>
+						<div id="f-f-7" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Final Fantasy VII</h1>
+								<p>Final Fantasy VII är den sjunde delen i rollspelsserien 
+								Final Fantasy av japanska Squaresoft. Spelet släpptes ursprungligen 
+								till PlayStation 1997 och blev 1998 det första spelet i serien som 
+								konverterades till Windows.</p>
+							</div>
+						</div>
+						<div id="f-f-8" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Final Fantasy VIII</h1>
+								<p>Final Fantasy VIII är ett RPG-spel till 
+								Playstation och Microsoft Windows utvecklat av Squaresoft.</p>
+							</div>
+						</div>
+						<div id="sonic-2" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Sonic the Hedgehog 2</h1>
+								<p>Sonic the Hedgehog 2 är ett plattformsspel utvecklat av 
+								Sonic Team, med hjälp av Sega Technical Institute, och utgivet 
+								av Sega till Sega Mega Drive. Det släpptes internationellt i 
+								november 1992.</p>
+							</div>
+						</div>
+						<div id="super-mario-2" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Super Mario Bros. 2</h1>
+								<p>Super Mario Bros. 2 är ett plattformsspel till NES. 
+								Amerikanska och europeiska Super Mario Bros. 2 är ett helt annat 
+								spel än japanska Super Mario Bros. 2, vilket var ganska likt 
+								Super Mario Bros.</p>
+							</div>
+						</div>
+						<div id="super-mario-3" class="game" onclick="elementClicked(this)">
+							<div class="game-text-container">
+								<h1>Super Mario Bros. 3</h1>
+								<p>Super Mario Bros. 3 är ett TV-spel utvecklat av Nintendo som 
+								släpptes till Nintendo Entertainment System i Japan den 23 oktober 
+								1988 och blev en stor försäljningsframgång över hela världen. 
+								Spelet producerades av Marios skapare Shigeru Miyamoto.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="education-content" class="red main-content education-content on-load ">
+				<div id="civil-content" class="exam-content">
+					<div class="logo-container">
+						<button id="kth-logo"class="logo-content"></button>
+					</div>
+					<!-- <div id="kth-scroll" class="scroll-content" onclick="animateScroll(this, 'KTH')"></div> -->
+				</div>
+				<div id="techer-content" class="exam-content">
+					<div class="logo-container">
+						<button id="su-logo" class="logo-content"></button>
+					</div>
+					<div id="su-scroll"class="scroll-content"></div>
+				</div>
+			</section>
+			<section id="about-content" class="purple main-content about-content on-load ">
+				About
+			</section>
+		</main>
+	
+	
+	
+	</body>
+	
+	<!-- Most javascript shall be added in the end of the body.
+		 Loading javascript files can take time and we want to see 
+		 the graphics on the page as fast as possible.  -->
+	<script type="text/javascript" src="js/menu.js"></script>
+	
+</html>

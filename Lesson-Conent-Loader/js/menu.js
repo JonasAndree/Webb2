@@ -1,8 +1,20 @@
 
-/**
- * mikaelai@kth.se
- * 
- */
+
+
+
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  var hiddenSections = document.getElementsByClassName("main-content2");
+  console.log(hiddenSections);
+  for (var i = 0; i < hiddenSections.size; i++) {
+	  hiddenSections[i].style.display = "inline";
+	  hiddenSections[i].style.display = "flex";
+  }
+}
+
+
+
 
 
 
