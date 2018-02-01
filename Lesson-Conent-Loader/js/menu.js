@@ -4,13 +4,12 @@
 
 
 function showPage() {
-  document.getElementById("loader").style.display = "none";
-  var hiddenSections = document.getElementsByClassName("main-content2");
-  console.log(hiddenSections);
-  for (var i = 0; i < hiddenSections.size; i++) {
-	  hiddenSections[i].style.display = "inline";
-	  hiddenSections[i].style.display = "flex";
-  }
+	document.getElementById("loader").style.opacity = "0";
+  	var hiddenSections = document.getElementsByClassName("main-content2");
+  	for (var i = 0; i < hiddenSections.size; i++) {
+	  	hiddenSections[i].style.display = "inline";
+	  	hiddenSections[i].style.display = "flex";
+	}
 }
 
 
@@ -345,7 +344,8 @@ for (var i = 1; i < 60; i++) {
 	var image = document.createElement("DIV");
 	image.className = "scroll-content";
 	image.id = "scroll-id-" + i;
-	//image.addEventListener("click", animateScroll(document.getElementById("civil-content"), "KTH"));
+	// image.addEventListener("click",
+	// animateScroll(document.getElementById("civil-content"), "KTH"));
 	image.addEventListener("click",  function() {
 		animateScroll(document.getElementById("civil-content"), "KTH");
 	});
