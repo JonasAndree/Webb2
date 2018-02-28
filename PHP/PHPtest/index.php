@@ -5,6 +5,7 @@
     	</form>
     	<?php 
     	   echo "Name:" . $_POST["name"];
-    	?>
+    	   
+       	?>
 	</body>
 </html>

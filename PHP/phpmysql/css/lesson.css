@@ -1,0 +1,61 @@
+/* A cool generated fiber background */
+
+div.users-container {
+	background-color: #0080ff;
+	color: WHITE;
+	float: left;
+	margin: 10px;
+	padding: 10px;
+    border-style: solid;
+    border-color: #2693ff;
+}
+
+.failed {
+	padding: 10px 10px 10px 10px;
+	text-align: center;
+	background-color: #ff8080;
+	width:200px;
+    border-style: solid;
+    border-color: #ff9f9f;
+}
+.success {
+	padding: 10px 10px 10px 10px;
+	text-align: center;
+	background-color: #80ff80;
+	width:200px;
+    border-style: solid;
+    border-color: #9dff9d;
+}
+#log-out {
+	display: none;
+}
+#login-status {
+	position: absolute;
+	right: 20px;
+	top: 20px; 
+	width: 250px;
+	background-color: #0080ff;
+    border-style: solid;
+    border-color: #2693ff;
+	padding: 10px 0px 10px 10px;
+	color: WHITE;
+}
+input {
+	margin: 10px;
+	padding: 4px;
+}
+#submit {
+	background-color: #0080c0;
+	padding: 5px;
+    border-style: solid;
+    border-color: #2693ff;
+    color: WHITE;
+}
+button {
+	background-color: #0080c0;
+	padding: 5px;
+    border-style: solid;
+    border-color: #2693ff;
+    color: WHITE;
+    right: 10px;
+}
