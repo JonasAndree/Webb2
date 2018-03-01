@@ -5,13 +5,13 @@
 	<body>
 		
         <?php 
-            $servername = "localhost";
-            $username = "Jonas";
-            $serverpassword = "r32bsW6XvAMhEVrA";
-            $dbname = "tek15";
+            $serverName = "localhost";
+            $userName = "Jonas";
+            $serverPassword = "r32bsW6XvAMhEVrA";
+            $dbName = "tek15";
             
             // Create connection
-            $conn = new mysqli($servername, $username, $serverpassword, $dbname);
+            $conn = new mysqli($serverName, $userName, $serverPassword, $dbName);
             // Check connection
             if ($conn->connect_error) {
                 die("<div class='failed'>Connection failed: " . $conn->connect_error."</div><br>");

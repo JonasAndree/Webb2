@@ -9,7 +9,6 @@
 			<input type="submit">
 		</form>
 		
-		
         <?php 
             $firstName = $lastName = $mail = $password = $birthdate = "";
         
@@ -49,19 +48,20 @@
                 }
                 
                 if ($alEnterd == true) {
-                    $servername = "localhost";
-                    $username = "Jonas";
-                    $serverpassword = "r32bsW6XvAMhEVrA";
-                    $dbname = "tek15";
+                    $serverName = "localhost";
+                    $userName = "Jonas";
+                    $serverPassword = "r32bsW6XvAMhEVrA";
+                    $dbName = "tek15";
                     
                     // Create connection
-                    $conn = new mysqli($servername, $username, $serverpassword, $dbname);
+                    $conn = new mysqli($serverName, $userName, $serverPassword, $dbName);
                     // Check connection
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
                     } else {
                         echo "Connection successful";
                     }
+                    // Quary
                     $sql = "INSERT INTO `users`(`firstname`, `lastname`, `mail`, `password`, `birthdate`) VALUES 
                                                ('".$firstName."', '".$lastName."','".$mail."','".$password."','".$birthdate."')";
                     
@@ -75,16 +75,13 @@
                     $conn->close();
                 }
             }
-            
             function test_input($data) {
                 $data = trim($data);
                 $data = stripslashes($data);
                 $data = htmlspecialchars($data);
                 return $data;
             }
-            
         ?>
-        
 	</body>
 </html>
         
