@@ -18,8 +18,29 @@
     
     
     
-    $wpn = array("damage"=>1243, "weight"=>"35", "type"=>"long bow", "ability"=>"43", "damageType"=>"piercing");
-    echo "<br><br>DMG: " . $wpn["damage"] . "<br> Type: " . $wpn["type"]. "<br> Damage type: " . $wpn["damageType"];
+    $wpn0 = array("damage"=>1243, "weight"=>"35", "type"=>"long bow", "ability"=>"43", "damageType"=>"piercing");
+    $wpn1 = array("damage"=>1243, "weight"=>"35", "type"=>"long bow", "ability"=>"43", "damageType"=>"piercing");
+    $wpn2 = array("damage"=>1243, "weight"=>"35", "type"=>"long bow", "ability"=>"43", "damageType"=>"piercing");
+    $wpn3 = array("damage"=>1243, "weight"=>"35", "type"=>"long bow", "ability"=>"43", "damageType"=>"piercing");
+    $wpn4 = array("damage"=>1243, "weight"=>"35", "type"=>"long bow", "ability"=>"43", "damageType"=>"piercing");
+    $wpn5 = array("damage"=>1243, "weight"=>"35", "type"=>"long bow", "ability"=>"43", "damageType"=>"piercing");
+    
+    echo "<br><br>DMG: " . $wpn0["damage"] . "<br> Type: " . $wpn["type"]. "<br> Damage type: " . $wpn["damageType"]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ;
     
     
    "firstname"=>"Jonas"

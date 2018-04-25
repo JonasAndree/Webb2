@@ -1,0 +1,69 @@
+:root {
+    --pos-top-items: 15vh; 
+    --deta-top-items: 15vh; 
+    --pos-lr-items: 25vw; 
+}
+body {
+	margin: 0px;
+	width: 0px;
+	height: 100vh;
+	width: 100vw;
+	background-image: url("../images/background.png");
+	background-size: cover;
+}
+.disp-items {
+	height: 12vh;
+	cursor: pointer;
+}
+
+#user-name {
+	position: absolute;
+	color: white;
+	left: 45vw;
+}
+#head-armor {
+	position: absolute;
+	left:var(--pos-lr-items);
+	top: calc(var(--pos-top-items) + 0*var(--deta-top-items));
+}
+#cheast-armor {
+	position: absolute;
+	left:var(--pos-lr-items);
+	top: calc(var(--pos-top-items) + 1*var(--deta-top-items));
+	
+}
+#gountelt-armor {
+	position: absolute;
+	left:var(--pos-lr-items);
+	top: calc(var(--pos-top-items) + 2*var(--deta-top-items));
+}
+#leggs-armor {
+	position: absolute;
+	left:var(--pos-lr-items);
+	top: calc(var(--pos-top-items) + 3*var(--deta-top-items));
+	
+}
+#cape-armor {
+	position: absolute;
+	left:var(--pos-lr-items);
+	top: calc(var(--pos-top-items) + 4*var(--deta-top-items));
+	
+}
+#prim-wpn {
+	position: absolute;
+	right:var(--pos-lr-items);
+	top: calc(var(--pos-top-items) + 0*var(--deta-top-items));
+	
+}
+#sec-wpn {
+	position: absolute;
+	right: var(--pos-lr-items);
+	top: calc(var(--pos-top-items) + 1*var(--deta-top-items));
+	
+}
+#heavy-wpn {
+	position: absolute;
+	right: var(--pos-lr-items);
+	top: calc(var(--pos-top-items) + 2*var(--deta-top-items));
+	
+}

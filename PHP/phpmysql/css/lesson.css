@@ -9,7 +9,15 @@ div.users-container {
     border-style: solid;
     border-color: #2693ff;
 }
-
+div.users-container-robin {
+	background-color: green;
+	color: WHITE;
+	float: left;
+	margin: 10px;
+	padding: 10px;
+    border-style: solid;
+    border-color: green;
+}
 .failed {
 	padding: 10px 10px 10px 10px;
 	text-align: center;
@@ -58,4 +66,13 @@ button {
     border-color: #2693ff;
     color: WHITE;
     right: 10px;
+}
+#robin {
+	color: red;
+}
+
+
+#u-img {
+	width: 200px;
+	height: 200px;
 }
