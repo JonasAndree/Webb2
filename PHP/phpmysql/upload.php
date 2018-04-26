@@ -17,7 +17,7 @@
                 $serverUserName = "root";
                 $serverPassword = "";
                 $dbName = "tek15";
-                $uploadOk = 1;
+                $uploadOk = true;
                 $currentUserMail = "jonandre@kth.se";
                 
                 // Create connection
@@ -34,16 +34,18 @@
             	        echo "File is an image - " . $fileType . ".";
             	    } else {
             	        echo "File is not an image.<br>";
-            	        $upladOk = 0;
+            	        $upladOk = false;
             	    }
             	}
             	// Check file size
             	if ($_FILES["fileToUpload"]["size"] > 500000) {
             	    echo "Sorry, your file is too large.";
-            	    $uploadOk = 0;
+            	    $uploadOk = false;
             	} 
+            	
+            	
             	// Check file is to be upploaded 
-            	if ($uploadOk == 0) {
+            	if ($uploadOk == false) {
             	    echo "Upploading file faild!";
             	} else {
             		// Gives the content of the file that is to be upploaded.
@@ -54,17 +56,16 @@
 					echo "<br> The uploading went well! <br>";
             		
 					
-					$sql = "SELECT * FROM `users` WHERE mail='$currentUserMail'";
-					$result = $conn->query($sql);
-					$row = $result->fetch_assoc();
-					$imageContent = $row["imageContent"];
-					$imageType = $row["imageType"];
-					$imageName = $row["imageName"];
+					$result = $conn->query("SELECT * FROM `users` WHERE mail='$currentUserMail'");
+					$user = $result->fetch_assoc();
+					$imageContent = $user["imageContent"];
+					$imageType = $user["imageType"];
+					$imageName = $user["imageName"];
 					
-					echo "<embed src='data:".$imageType.";base64,".base64_encode($imageContent)."' width='200'/>";
+					echo "<embed src='data:".$imageType.";base64,".base64_encode($imageContent)."'/>";
             	}
             	echo "<br>Database closed.<br>";
-            	$conn->close();
+            	$conn->close(); 
             	
             }
         ?>
