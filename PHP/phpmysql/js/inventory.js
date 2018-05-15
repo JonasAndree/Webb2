@@ -65,8 +65,12 @@ function showItemInfo(itemInfo, onOff) {
 	else 
 		item.style.display = "none";
 }
+
+updateStats();
 function updateStats() {
 	var container = document.getElementById("stats-container");
+	
+	
 	container.innerHTML = "";
 	
 	var xmlhttp = new XMLHttpRequest();

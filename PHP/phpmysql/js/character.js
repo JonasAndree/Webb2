@@ -194,7 +194,7 @@ function update3DOBJ(blobObject, objName) {
 //	var url = URL.createObjectURL(file);
 	
 	loader.load(blobObject, function(object) {
-		console.log("object: "+object);
+		console.log("object: " + object);
 		console.log("objName: " + objName);
 		object.mixer = new THREE.AnimationMixer(object);
 		object.name = objName;

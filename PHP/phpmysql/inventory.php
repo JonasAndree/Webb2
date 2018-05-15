@@ -125,7 +125,7 @@
                     die("<div class='failed'>Connection failed: " . $conn->connect_error."</div><br>");
                 } 
                 
-                $bagResult = $conn->query("SELECT * FROM `items` WHERE Player='$currentUser' AND type='consumable'");
+                $bagResult = $conn->query("SELECT * FROM `items` WHERE Player='$currentUser'");
                 //$bagResult = $conn->query("SELECT * FROM `items` WHERE Player='$currentUser'");
                 
                 //The array would be NULL if there are no other users.
@@ -158,7 +158,7 @@
             ?>
         </div>
         <div id='stats-container'>
-    		<?php include 'setStats.php';?>
+    		<!-- <?php include 'setStats.php';?> -->
 		</div>
         <script type="text/javascript" src="js/inventory.js"></script>
         <!--  <script type="text/javascript" src="js/3DCharacter.js"></script>-->
