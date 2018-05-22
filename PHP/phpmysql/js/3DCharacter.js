@@ -43,7 +43,7 @@ function init() {
 	
 	// model
 	var loader = new THREE.FBXLoader();
-	loader.load( './obj/M.fbx', function ( object ) {
+	loader.load( './obj/spaceship.fbx', function ( object ) {
 		object.mixer = new THREE.AnimationMixer( object );
 		mixers.push( object.mixer );
 		var action = object.mixer.clipAction( object.animations[ 0 ] );

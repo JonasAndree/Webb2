@@ -38,7 +38,7 @@ function selectItems(subtype, hide) {
 			container.innerHTML = this.responseText;
 		}
 	};
-	xmlhttp.open("GET", "getItems.php?q=" + subtype, true);
+	xmlhttp.open("GET", "./php/getItems.php?q=" + subtype, true);
 	xmlhttp.send();
 }
 
@@ -53,7 +53,7 @@ function setItems(itemName, subtype) {
 			updateStats();
 		}
 	};
-	xmlhttp.open("GET", "setItems.php?q=" + itemName, true);
+	xmlhttp.open("GET", "./php/setItems.php?q=" + itemName, true);
 	xmlhttp.send();
 }
 
@@ -79,7 +79,7 @@ function updateStats() {
 			container.innerHTML = this.responseText;
 		}
 	};
-	xmlhttp.open("GET", "./setStats.php", true);
+	xmlhttp.open("GET", "./php/addActiveGear.php", true);
 	xmlhttp.send();
 }
 
