@@ -19,11 +19,11 @@
         
         echo "<div class='bag-item-container'>
                  <embed class='bag-item-image' src='data:$imageType;base64," . base64_encode($item["image"]) . "'
-                        onmouseover='itemInfo(\"$currentName-item-info\", \"on\", \"bottom\")'
-                        onmouseout='itemInfo(\"$currentName-item-info\", \"off\", \"bottom\")'
-                        onclick='subItems(\"$currentName\", \"$subtype\")'/>";
+                        onmouseover='itemInfo(\"bag-$currentName-item-info\", \"on\", \"bottom\")'
+                        onmouseout='itemInfo(\"bag-$currentName-item-info\", \"off\", \"bottom\")'
+                        onclick=''/>";
         
-        echo "<div id='$currentName-item-info' class='bag-item-info'>
+        echo "<div id='bag-$currentName-item-info' class='bag-item-info'>
                           <b>$currentName</b>
                           <br>Type: <i>$subtype </i>";
         

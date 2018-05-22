@@ -2,9 +2,35 @@
 <html>
 	<head>
 		<title>Jonas Rep</title>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		
 		<link rel="stylesheet" type="text/css" href="css/inventory.css"/>
+		
+    	<script src="js/build/three.js"></script>
+		<script src="js/Detector.js"></script>
+		<script src="js/controls/OrbitControls.js"></script>
+		
+		
+		<!-- <script src="js/libs/inflate.min.js"></script>
+		<script src="js/controls/OrbitControls.js"></script>
+		<script src="js/loaders/JSONLoader.js"></script>
+		 -->
+		 
 	</head>
 	<body>
+	
+	
+	
+    	<header id="header">
+    		<div id="loggin"> </div>
+    	</header>
+    	
+    	<div id="canvas" ></div>
+    	
+    	
+    	
 	
 		<div id="active-gear">
 			<div class="armor-column">
@@ -75,5 +101,6 @@
 		</div>
 		
 		<script type="text/javascript" src="js/inventory.js"></script>
+		<script type="text/javascript" src="js/canvasView.js"></script>
 	</body>
 </html>

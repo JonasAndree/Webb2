@@ -6,17 +6,22 @@ embed:active {
 	filter: brightness(1.4);
 }
 embed {
-	filter: invert(2);
 }
 body {
 	background-color: #444;
+	margin: 0px;
+	padding: 0px;
 }
+	#canvas {
+		position: absolute;
+	}
 #active-gear {
 	postion: absolute;
 	top: 0vh;
-	margin: 5vh 10vw 10vh 10vw;
-	width: 100vw;
-	height: 100vh;
+	padding-top: 15vh;
+	padding-left: 10vw;
+	width: 80vw;
+	height: 95vh;
 }
 	.armor-column {
 		position: absolute;
@@ -96,14 +101,15 @@ body {
 		}
 		
 		div.sub-item {
-				margin: 5px 10px 0px 10px;
 				width: 70px;
 				height: 70px;
 			}	
 			div.left.sub-item {
+				margin: 5px 0px 0px 20px;
 				float:left;
 			}	
 			div.right.sub-item {
+				margin: 5px 20px 0px 0px;
 				float:right;
 			}		
 				
@@ -134,8 +140,8 @@ body {
 			position: absolute;
 			display: none;
 			margin-top: 80px;
-			margin-left: -105px;
-			background-color: rgba(20,20,20,0.2);
+			margin-left: -80px;
+			background-color: rgba(120,120,120,0.2);
 			width: 110px;
 			padding: 10px 10px 10px 10px
 		}

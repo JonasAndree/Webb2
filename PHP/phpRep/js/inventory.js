@@ -23,8 +23,22 @@ function subItems(id) {
 	}
 }
 
-function setItem(name, subtype, containerId) {
-	var container = document.getElementById(containerId);
+function setItem(name, subtype, type) {
+	var container = document.getElementById(subtype+"-gear");
+	container.innerHTML = "";
+	
+	var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			container.innerHTML = this.responseText;
+			updateBag();
+		}
+	};
+	xmlhttp.open("GET", "./php/updateActiveItem.php?name=" + name + "&subtype=" + subtype + "&type=" + type, true);
+	xmlhttp.send();
+}
+function updateBag() {
+	var container = document.getElementById("bag");
 	container.innerHTML = "";
 	
 	var xmlhttp = new XMLHttpRequest();
@@ -33,6 +47,6 @@ function setItem(name, subtype, containerId) {
 			container.innerHTML = this.responseText;
 		}
 	};
-	xmlhttp.open("GET", "./php/setStats.php", true);
+	xmlhttp.open("GET", "./php/bag.php", true);
 	xmlhttp.send();
 }

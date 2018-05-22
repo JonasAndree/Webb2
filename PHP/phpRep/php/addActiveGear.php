@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 $currentUser = "jonandre@kth.se";
 // Create connection
 $conn = new mysqli("localhost", "root", "", "tek15");

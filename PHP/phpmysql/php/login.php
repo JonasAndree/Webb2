@@ -1,9 +1,10 @@
 <html>
     <head>
-   		<link rel="stylesheet" type="text/css" href="css/lesson.css"/>
+   		<link rel="stylesheet" type="text/css" href="./css/lesson.css"/>
 	</head>
 	<body>
 		<div id="login-status">
+		
     		<div id="form-container">
         		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
         			Mail: <input type="email" name="mail" required><br>
@@ -11,6 +12,7 @@
         			<input id="submit" type="submit">
         		</form>
     		</div>
+    	
     		<div id="log-out">
     			Mail:<b id="logedin-mail"></b>
     			<button onclick="logout()">Log out</button>
@@ -19,11 +21,12 @@
 		
         <?php 
             $mail = $password = "";
+            
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $alEnterd = true;
                 
                 if (!empty($_POST["mail"])) {
-                    $mail = test_input($_POST["mail"]);
+                    $mail = test_input( $_POST["mail"] );
                 } else {
                     $alEnterd = false;
                     echo "Pleace select a mail! <br>";
@@ -34,6 +37,8 @@
                     $alEnterd = false;
                     echo "Pleace select a password! <br>";
                 }
+                
+                
                 
                 if ($alEnterd == true) {
                     $serverName = "localhost";
@@ -68,9 +73,9 @@
                      */
                     $user_array = $users->fetch_assoc();
                     //The array would be NULL if there are no other users. 
-                    if ($user_array != NULL) {
+                    if (!empty($user_array)) {
                         echo "<br>The username and password is ok!<br>";
-                        echo "<script>document.getElementById('logedin-mail').innerHTML = ' ". $user_array["firstname"]." ". $user_array["lastname"]."'</script>";
+                        echo "<script>document.getElementById('logedin-mail').innerHTML = ' ". $user_array["mail"]."'</script>";
                         echo "<script>document.getElementById('form-container').style.display = 'none';</script>";
                         echo "<script>document.getElementById('log-out').style.display = 'inline-block';</script>";
                     } else {
@@ -79,6 +84,9 @@
                     $conn->close();
                 }
             }
+            
+            
+            
             function test_input($data) {
                 $data = trim($data);
                 $data = stripslashes($data);
@@ -87,7 +95,7 @@
             }
         ?>
         
-		<script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript" src="./js/menu.js"></script>
 	</body>
 </html>
         

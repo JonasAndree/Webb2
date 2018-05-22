@@ -13,17 +13,15 @@ if (! $itemResult) {
 }
 while ($item = $itemResult->fetch_assoc()) {
     echo "<div class='sub-item $direction'>";
-    
     $imageType = "image/" . $item['imageType'];
     $currentName = $item["name"];
     $armor = $item['armor'];
     $damage = $item['damage'];
-    
-    
+    $type = $item['type'];
         echo "<embed class='sub-item-image' src='data:$imageType;base64," . base64_encode($item["image"]) . "'
                     onmouseover='itemInfo(\"$currentName-item-info-container\", \"on\", \"left\")'
                     onmouseout='itemInfo(\"$currentName-item-info-container\", \"off\", \"left\")'
-                    onclick='setItem($currentName, $subtype)'/>";
+                    onclick='setItem(\"$currentName\", \"$subtype\", \"$type\")'/>";
     
         echo "<div id='$currentName-item-info-container' class='sub-item-info-container'> ";
             echo "<div id='$currentName-item-info' class='sub-item-info down $direction'>

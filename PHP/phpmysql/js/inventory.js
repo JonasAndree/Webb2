@@ -79,7 +79,7 @@ function updateStats() {
 			container.innerHTML = this.responseText;
 		}
 	};
-	xmlhttp.open("GET", "./php/addActiveGear.php", true);
+	xmlhttp.open("GET", "./php/setStats.php", true);
 	xmlhttp.send();
 }
 
