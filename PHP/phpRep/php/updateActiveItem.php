@@ -11,7 +11,10 @@
         die("<div class='failed'>Connection failed: " . $conn->connect_error . "</div><br>");
     }
     $itemResult = $conn->query("UPDATE `items` SET active='inactive' WHERE Player='$currentUser' AND active='active' AND subtype='$subtype'");
+    
     $itemResult = $conn->query("UPDATE `items` SET active='active' WHERE Player='$currentUser' AND name='$name' AND subtype='$subtype'");
+   
+    
     $direction = "left";
     if ($type == "armor")
         $direction = "left";

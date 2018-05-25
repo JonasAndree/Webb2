@@ -21,7 +21,9 @@ while ($item = $itemResult->fetch_assoc()) {
         echo "<embed class='sub-item-image' src='data:$imageType;base64," . base64_encode($item["image"]) . "'
                     onmouseover='itemInfo(\"$currentName-item-info-container\", \"on\", \"left\")'
                     onmouseout='itemInfo(\"$currentName-item-info-container\", \"off\", \"left\")'
-                    onclick='setItem(\"$currentName\", \"$subtype\", \"$type\")'/>";
+                    onclick='setItem(\"$currentName\", \"$subtype\", \"$type\")'
+                    oncontextmenu='showDeleteMenu(\"$currentName\")'
+                    />";
     
         echo "<div id='$currentName-item-info-container' class='sub-item-info-container'> ";
             echo "<div id='$currentName-item-info' class='sub-item-info down $direction'>

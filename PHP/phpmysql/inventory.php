@@ -3,7 +3,7 @@
    		<link rel="stylesheet" type="text/css" href="css/inventory.css"/>
 	</head>
 	<body>
-		<script src="js/build/three.min.js"></script>
+		<script src="js/build/three.js"></script>
 		<script src="js/libs/inflate.min.js"></script>
 		
 		<script src="js/controls/OrbitControls.js"></script>
