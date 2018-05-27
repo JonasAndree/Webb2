@@ -47,20 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     if ($alEnterd == true) {
-        $serverName = "localhost";
-        $userName = "Jonas";
-        $serverPassword = "r32bsW6XvAMhEVrA";
-        $dbName = "tek15";
-        
-        // Create connection
-        $conn = new mysqli($serverName, $userName, $serverPassword, $dbName);
-        // Check connection
+        $conn = new mysqli("localhost", "root", "", "herodb");
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         } else {
             echo "Connection successful";
         }
-        // Quary
         $sql = "INSERT INTO `users`(`firstname`, `lastname`, `mail`, `password`, `birthdate`) VALUES 
                                                ('" . $firstName . "', '" . $lastName . "','" . $mail . "','" . $password . "','" . $birthdate . "')";
         

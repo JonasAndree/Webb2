@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		
 		<link rel="stylesheet" type="text/css" href="css/inventory.css"/>
+		<link rel="stylesheet" type="text/css" href="css/media.css"/>
 		<link rel="stylesheet" type="text/css" href="css/login.css"/>
 		
     	<script src="js/build/three.js"></script>
@@ -27,93 +28,25 @@
         		<div id = "login-container">
             		<div id = "login-content">	
                 		<div id="login">
-                			<?php include "php/login.php" ?>
+                			
                 		</div>
                 		<div id="register">
-                			<?php include "php/register.php" ?>
+                			
                 		</div>
             		</div>
         		</div>		
         	</header>
         
     		<div id="active-gear">
-    			<div id="armor-arrow" class="arrow left"onclick="showArmor('armor-arrow', 'armor-container')" > 
-    				<img class="arrow-img" alt="tap your mouse here to show content" src="images/tap.png">
-    			</div>
-        		<div id="armor-container">
-        			<div class="armor-column">
-                		<div id="head-gear">
-            				<?php
-                				$subtype = "head";
-                				$direction = "left";
-            				    include "php/addActiveGear.php"; 
-                            ?>
-                		</div>
-                		<div id="cheast-gear">
-            				<?php 
-                				$subtype = "cheast";
-                				$direction = "left";
-                				include "php/addActiveGear.php";
-                            ?>
-                		</div>
-                		<div id="arms-gear">
-            				<?php 
-                				$subtype = "arms";
-                				$direction = "left";
-                				include "php/addActiveGear.php";
-                            ?>
-                		</div>
-                		<div id="leggs-gear">
-            				<?php 
-                				$subtype = "leggs";
-                				$direction = "left";
-                				include "php/addActiveGear.php";
-                            ?>
-                		</div>
-                		<div id="cape-gear">
-            				<?php 
-                				$subtype = "cape";
-                				$direction = "left";
-                				include "php/addActiveGear.php";
-                            ?>
-                		</div>
-            		</div>
-        		</div>
-        		
-    			<div id="wpn-arrow" class="arrow right" onclick="showArmor('wpn-arrow', 'wpn-container')" > 
-    				<img id="right-arrow-img" class="arrow-img" alt="tap your mouse here to show content" src="images/tap.png">
-    			</div>
-        		<div id="wpn-container">
-        			<div class="wpn-column">
-                		<div id="light-gear">
-            				<?php 
-                				$subtype = "light";
-                				$direction = "right";
-                				include "php/addActiveGear.php";
-                            ?>
-                		</div>
-                		<div id="medium-gear">
-            				<?php 
-                				$subtype = "medium";
-                				$direction = "right";
-                    			include "php/addActiveGear.php";
-                            ?>
-                		</div>
-                		<div id="heavy-gear">
-            				<?php 
-                				$subtype = "heavy";
-                				$direction = "right";
-                				include "php/addActiveGear.php";
-                            ?>
-                		</div>
-                	</div>	
-    			</div>
+				<?php 
+    				include "php/createInventory.php";
+                ?>
     		</div>
     		
     		<button id="toggle-view" onclick="scrollToView();">&#x21F3</button>
     		
-    		<div id="bag">
-    			<?php include "php/bag.php" ?>
+    		<div id="storage">
+    			<?php include "php/storage.php" ?>
     		</div>
 		</main>
 		<section id="delete-screen">

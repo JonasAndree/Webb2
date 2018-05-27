@@ -21,7 +21,6 @@ $mail = $password = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $alEnterd = true;
-    
     if (! empty($_POST["mail"])) {
         $mail = test_input($_POST["mail"]);
     } else {
@@ -34,41 +33,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $alEnterd = false;
         echo "Pleace select a password! <br>";
     }
-    
     if ($alEnterd == true) {
-        $serverName = "localhost";
-        $userName = "root";
-        $serverPassword = "";
-        $dbName = "tek15";
-        
-        // Create connection
-        $conn = new mysqli($serverName, $userName, $serverPassword, $dbName);
-        // Check connection
+        $conn = new mysqli("localhost", "root", "", "herodb");
         if ($conn->connect_error) {
             die("<div id='failed'>Connection failed: " . $conn->connect_error . "<div><br>");
         } else {
             echo "<div id='success'>Connection successful.<div><br>";
         }
-        /*
-         * Tänk på att sätta rätt ' ´ täcken på rätt platts. ' om det är någonting som man
-         * kollar om den är lika med så är det ' om det är en kolumn så använd ´ ´.
-         */
         $sql = "SELECT * FROM `users` WHERE mail='$mail' AND password='$password'";
         $users = $conn->query($sql);
-        
-        /*
-         * Returns an associative array of strings representing the fetched row
-         * in the result set, where each key in the array represents the name of
-         * one of the result set's columns or NULL if there are no more rows in
-         * resultset.
-         *
-         * If two or more columns of the result have the same field names, the last
-         * column will take precedence. To access the other column(s) of the same
-         * name, you either need to access the result with numeric indices by using
-         * mysqli_fetch_row() or add alias names.
-         */
         $user_array = $users->fetch_assoc();
-        // The array would be NULL if there are no other users.
         if (! empty($user_array)) {
             echo "<br>The username and password is ok!<br>";
             echo "<script>document.getElementById('logedin-mail').innerHTML = ' " . $user_array["mail"] . "'</script>";

@@ -13,6 +13,7 @@ var radius = 4;
 var elapsedTime = 0;
 var rotSpeed = 0.003;
 
+
 init();
 animate();
 
@@ -29,7 +30,10 @@ function init() {
 			/ window.innerHeight, 1, 2000);
 
 	controls = new THREE.OrbitControls(camera);
-	camera.position.set(1.54, 1.8, 3.78);
+	var r = 2200/window.innerWidth;
+	camera.position.set(r * 1.54, r * 1.8, r * 3.78);
+	
+	
 	clock = new THREE.Clock();
 	scene = new THREE.Scene();
 	scene.fog = new THREE.FogExp2(0x000000, 0.035);
@@ -109,10 +113,17 @@ function jsonLoader(url) {
 		console.log('An error happened');
 	}
 }
+var oldWindowWidth = window.innerWidth;
 function onWindowResize(event) {
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
+
+	var r = oldWindowWidth/window.innerWidth;
+	oldWindowWidth = window.innerWidth;
+	camera.position.x *= r;
+	camera.position.y *= r;
+	camera.position.z *= r;
 }
 //
 function animate() {
@@ -121,11 +132,7 @@ function animate() {
 }
 function render() {
 	if (!mouseDown) {
-		// var delta = clock.getDelta();
 		var timer = Date.now() * 0.0003;
-		// var x = camera.position.x, y = camera.position.y, z =
-		// camera.position.z;
-		// camera.lookAt(object.position);
 		var x = camera.position.x, y = camera.position.y, z = camera.position.z;
 		camera.position.x = x * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
 		camera.position.z = z * Math.cos(rotSpeed) - x * Math.sin(rotSpeed);
