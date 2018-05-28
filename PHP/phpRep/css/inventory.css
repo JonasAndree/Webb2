@@ -174,13 +174,12 @@ body {
 					left: 120px;
 					margin-top: 0px;
 					background-color: var(--theame-color);
-					width: 200px;
 					height: 80px;
 				}
 				.sub-item-container { display: none; }
 				.sub-item-container.toggle { display: inline; }
 					.right.sub-item-container {
-						left: -165px;
+						position: absolute;
 						background: linear-gradient(to right, rgba(20,20,20,0.0), rgba(20,20,20,0.2));
 					}
 					.left.sub-item-container {
@@ -202,7 +201,7 @@ body {
 							float:left;
 						}	
 						.right.sub-item {
-							margin: 5px 20px 0px 0px;
+							margin: 5px 130px 0px 0px;
 							float:right;
 						}
 							.sub-item-info-container { display: none; }
