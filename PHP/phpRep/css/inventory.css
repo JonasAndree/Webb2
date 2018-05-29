@@ -126,8 +126,6 @@ body {
 				height: 80vh;
 				width: 150px;
 			}
-			
-			
 				.active-item-container {
 					width: 100%;
 					margin-top: 2vh;
@@ -152,7 +150,9 @@ body {
 						padding: 10px;
 					}
 					.active-item-info.left {
-						left: -110px;
+						position: absolute;
+						left: -120px;
+						width: 140px;
 						text-align: right;
 						background: linear-gradient(to right, rgba(30, 30, 30, 0.0), rgba(20,20,20,0.2));
 					}
