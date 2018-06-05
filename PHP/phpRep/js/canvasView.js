@@ -58,8 +58,16 @@ function init() {
 
 	// events
 	window.addEventListener('resize', onWindowResize, false);
+<<<<<<< HEAD
 	objectLoader("./obj/spaceship2.json");
 	objectLoader("./obj/IonBlaster.json");
+=======
+	objectLoader("./obj/spaceship1.json");
+	
+	loaddb('./php/model.php');
+	
+	//objectLoader("./obj/IonBlaster.json");
+>>>>>>> c3ba7d2a27d0064c7569c0bd7ce40fc598e65e52
 
 	scene.fog = new THREE.Fog(0xa0a0a0, 200, 1000);
 
@@ -68,6 +76,23 @@ function init() {
 	grid.material.transparent = true;
 	grid.position.y = -200;
 	scene.add(grid);
+}
+function loaddb(filed) {
+	var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			var json = this.responseText;
+			//console.log("json XML:" + response);
+			var loader = new THREE.JSONLoader();
+			
+			var model = loader.parse( json );
+			mesh = new THREE.Mesh( model.geometry, model.materials[ 0 ] );
+			scene.add( mesh );
+			//jsonLoader(model);
+		}
+	};
+	xmlhttp.open("GET", filed , true);
+	xmlhttp.send();
 }
 
 function objectLoader(url) {
@@ -84,7 +109,7 @@ function objectLoader(url) {
 	},
 	// onProgress callback
 	function(xhr) {
-		console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+		console.log("obj: "+(xhr.loaded / xhr.total * 100) + '% loaded');
 	},
 	// onError callback
 	function(err) {
@@ -93,19 +118,21 @@ function objectLoader(url) {
 }
 
 function jsonLoader(url) {
-	// resource URL
+	// resource URL	
+	console.log("json: obj "+url);
 	url,
 
 	// onLoad callback
 	function(geometry, materials) {
 		var material = materials[0];
-		var object = new THREE.Mesh(geometry, material);
+		var object = new THREE.Mesh(geometry, material);	
+
 		scene.add(object);
 	},
 
 	// onProgress callback
 	function(xhr) {
-		console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+		console.log("json: "+(xhr.loaded / xhr.total * 100) + '% loaded');
 	},
 
 	// onError callback
