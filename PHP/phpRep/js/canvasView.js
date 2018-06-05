@@ -58,7 +58,7 @@ function init() {
 
 	// events
 	window.addEventListener('resize', onWindowResize, false);
-	objectLoader("./obj/spaceship1.json");
+	objectLoader("./obj/spaceship2.json");
 	objectLoader("./obj/IonBlaster.json");
 
 	scene.fog = new THREE.Fog(0xa0a0a0, 200, 1000);
