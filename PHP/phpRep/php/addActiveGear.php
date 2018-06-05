@@ -20,6 +20,7 @@ if (!empty($itemName)) {
         $item = $conn->query("SELECT * FROM `items` WHERE name='$itemName'")->fetch_assoc();
      
         $imageType = "image/" . $item['imagetype'];
+        
         echo "<div class='active-item-container'>";
             echo "<embed class='active-item-image' src='data:$imageType;base64," . base64_encode($item["image"]) . "'
                         onmouseover='itemInfo(\"$itemName-item-info\", \"on\")'

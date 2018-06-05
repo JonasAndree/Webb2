@@ -58,16 +58,12 @@ function init() {
 
 	// events
 	window.addEventListener('resize', onWindowResize, false);
-<<<<<<< HEAD
 	objectLoader("./obj/spaceship2.json");
-	objectLoader("./obj/IonBlaster.json");
-=======
-	objectLoader("./obj/spaceship1.json");
+//	objectLoader("./obj/IonBlaster.json");
+//	objectLoader("./obj/spaceship1.json");
 	
-	loaddb('./php/model.php');
-	
+	getActiveObj();
 	//objectLoader("./obj/IonBlaster.json");
->>>>>>> c3ba7d2a27d0064c7569c0bd7ce40fc598e65e52
 
 	scene.fog = new THREE.Fog(0xa0a0a0, 200, 1000);
 
@@ -77,21 +73,32 @@ function init() {
 	grid.position.y = -200;
 	scene.add(grid);
 }
-function loaddb(filed) {
+function getActiveObj() {
 	var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			var json = this.responseText;
-			//console.log("json XML:" + response);
-			var loader = new THREE.JSONLoader();
-			
-			var model = loader.parse( json );
-			mesh = new THREE.Mesh( model.geometry, model.materials[ 0 ] );
-			scene.add( mesh );
-			//jsonLoader(model);
+			//this.responseText;
 		}
 	};
-	xmlhttp.open("GET", filed , true);
+	xmlhttp.open("GET", "./php/setActiveObj.php" , true);
+	xmlhttp.send();
+}
+
+function loadDBObject(filedb) {
+	var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			var myJSONString = this.responseText;
+			var myJSONObject = JSON.parse(myJSONString);
+			
+			var loader = new THREE.JSONLoader();
+			var model = loader.parse( myJSONObject );
+			mesh = new THREE.Mesh( model.geometry, model.materials[ 0 ] );
+			scene.add( mesh );
+			//jsonLoader(json);
+		}
+	};
+	xmlhttp.open("GET", filedb , true);
 	xmlhttp.send();
 }
 

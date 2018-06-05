@@ -35,6 +35,7 @@ function setItem(name, subtype, type) {
 		if (this.readyState == 4 && this.status == 200) {
 			container.innerHTML = "";
 			container.innerHTML = this.responseText;
+			loadDBObject("./php/model.php?name=" + name + "&subtype=" + subtype + "&type=" + type);
 			updateStorage();
 		}
 	};

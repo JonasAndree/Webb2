@@ -13,7 +13,7 @@
     	<script src="js/build/three.js"></script>
 		<script src="js/Detector.js"></script>
 		<script src="js/controls/OrbitControls.js" on></script>
-		
+	
 		
 		<!-- <script src="js/libs/inflate.min.js"></script>
 		 -->
@@ -22,7 +22,9 @@
 	<body>
 		<main id="main">
         	<div id="canvas" ></div>
-    	
+		<script type="text/javascript" src="js/canvasView.js"></script>
+        		
+		
         	<header id="header">
         		<div id="heading"><p> HTML CSS PHP JavaScript Ajax mySQL Three.js</p></div>
         		<div id = "login-container">
@@ -59,7 +61,7 @@
 				</div>
 			</div>
 		</section>
+		<script type="text/javascript" src="js/objLoader.js"></script>
 		<script type="text/javascript" src="js/inventory.js"></script>
-		<script type="text/javascript" src="js/canvasView.js"></script>
 	</body>
 </html>

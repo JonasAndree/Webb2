@@ -1,9 +1,9 @@
 <?php
    
-    //$name = $_REQUEST["name"];
-    //$subtype = $_REQUEST["subtype"];
-    //$type = $_REQUEST["type"];
-    $name = "IonBlaster";
+    $name = $_REQUEST["name"];
+    $subtype = $_REQUEST["subtype"];
+    $type = $_REQUEST["type"];
+    //$name = "NightrogenBlaster";
     $currentUser = "jonandre@kth.se";
     
     $conn = new mysqli("localhost", "root", "", "herodb");
