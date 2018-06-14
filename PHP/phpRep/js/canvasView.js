@@ -89,6 +89,7 @@ function loadDBObject(filedb) {
 		xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			var myJSONString = this.responseText;
+			console.log(myJSONString);
 			var myJSONObject = JSON.parse(myJSONString);
 			
 			var loader = new THREE.JSONLoader();
