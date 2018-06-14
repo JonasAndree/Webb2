@@ -20,12 +20,15 @@ if (state == null) {
 		toggleElement(history.state.index);
 		setMargins(history.state.index);
 	} else {
-		showGraph(history.state.index);
-		if (history.state.index == "showtemperature") {
-			stateObj =  { index: history.state.index };
-			history.replaceState(stateObj, history.state.index, "index.php#" + history.state.index);
-			setMargins("home");
-			animateArrow(21.2);
+		var state = history.state.index; 
+		stateObj =  { index: "home" };
+		history.replaceState(stateObj, "home", "index.php#" + "home");
+		setMargins("home");
+		stateObj =  { index: state };
+		history.replaceState(stateObj, state, "index.php#" + state);
+		showGraph(state);
+		if (state == "showtemperature") {
+		} else if (state == "design") {
 		}
 	}
 	
@@ -108,10 +111,6 @@ function showGraph(id) {
 function fitImage(id) {
 	var element = document.getElementById(id);
 	
-	//window.innerWidth
-	//window.height
-	//img.clientWidth;
-	//img.clientHeight;
 	var imgContainer = element.getElementsByClassName("graph-image-container")[0];
 	var img = imgContainer.getElementsByClassName("graph-images")[0];
 	
@@ -127,48 +126,32 @@ function fitImage(id) {
 	
 	if (wWidth < imgWidth && imgProp >= 1) {
 		console.log("width");
-		var newWRatio = (imgWidth / wWidth)*4/5;
-		if (newWRatio * imgHeight + 100 <= wHeight) {
-			console.log("width");
-			img.style.width = "";
-			img.style.height = wHeight*4/5 + "px";
-		} else {
+		var newWRatio = ( wWidth / imgWidth*4/5 );
+		console.log("newWRatio" + newWRatio)
+		if (newWRatio <= 0.2) {
+			console.log("Height");
 			img.style.width = wWidth*4/5 + "px";
 			img.style.height = "";
-		}
-	} else if (wHeight < imgHeight && imgProp >= 1) {
-		console.log("height");
-		var newWRatio = (imgWidth / wWidth)*4/5;
-		if (newWRatio * imgHeight + 100 <= wHeight) {
-			img.style.width = "";
-			img.style.height = wHeight*4/5 + "px";
 		} else {
+			console.log("Width");
+			img.style.width = "";
+			img.style.height = wHeight*2.5/5 + "px";
+		}
+	} else {
+		console.log("width");
+		var newWRatio = ( wWidth / imgWidth*4/5 );
+		console.log("newWRatio" + newWRatio)
+		if (newWRatio <= 0.2) {
+			console.log("Width");
+			img.style.width = "";
+			img.style.height = wHeight*2.5/5 + "px";
+		} else {
+			console.log("Height");
 			img.style.width = wWidth*4/5 + "px";
 			img.style.height = "";
 		}
 	}
 	
-	/*if (img.clientWidth > window.innerWidth ) {
-		img.style.width = window.innerWidth*4/5 + "px";
-		if (img.clientHeight > window.innerHeight ) {
-			img.style.height = window.innerHeight*4/5 + "px";
-		} 
-	} else {
-		
-	}*/
-	/*if (imgProportions < 1 ) {
-		if (windowProportions < 1) {
-			
-		} else {
-			imgContainer.style.width = img.clientWidth + "px";
-		}
-	} else {
-		if (windowProportions < 1) {
-			
-		} else {
-			
-		}
-	}*/
 	
 	
 	
@@ -178,7 +161,8 @@ function fitImage(id) {
 function hideGraph(id) {
 	toggleElement("graph");
 	toggleElement(id);
-	window.history.back();
+	stateObj =  { index: "home" };
+	history.pushState(stateObj, "home", "index.php#" + "home");
 }
 function animateArrow(celcius) {
 	var arrow = document.getElementById("arrow");
@@ -204,8 +188,6 @@ async function demo(celcius) {
 function animateArrow2(celcius) {
 	var arrow = document.getElementById("arrow");
 	var angle = celcius * 3;
-	
-
     var shadowX = Math.round(Math.sin(angle * (Math.PI / 180)) * 13,2);
     var shadowY = Math.round(Math.cos(angle * (Math.PI / 180)) * 13,2);
     //arrow.style.filter = "drop-shadow(" + shadowX + "px " + shadowY + "px 5px #888 )";

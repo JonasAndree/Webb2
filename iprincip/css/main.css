@@ -3,9 +3,7 @@
 .pressable:hover {filter: brightness(1.2);}
 .pressable:active {filter: brightness(1.4);}
 
-
-					
-					
+		
 
 body {
     font-size: 9px;
@@ -45,10 +43,13 @@ body {
 		.square-small-header {
 			position: absolute;
 		    font-weight: 600;
-   			font-size: 13px;
+   			font-size: 12px;
 		}
 		.top {
 			top: 0px;
+		}
+		.top2 {
+			top: -8px;
 		}
 		.bottom {
    			bottom: 2px;
@@ -106,8 +107,10 @@ body {
 		z-index: -1;
 	}
 		.graph-image-container {
+			position: absolute;
 		}
 		.baromter-image-container {
+			position: absolute;
 			width: 30vw;
 			margin-top: -20vw;
 		}
@@ -126,6 +129,8 @@ body {
 			.graph-exit {
 				position: absolute;
 				width: 42px;
+				left: 5px;
+				top: 5px;
 				height: 42px;
 				background-color: #1E1E1E;
 			}
@@ -139,10 +144,6 @@ body {
 			.menu-bar-1 { transform: rotate(-45deg) translate(1px, 11px); }
 			.menu-bar-2 { transform: rotate(45deg) translate(1px, -11px); }
 
-	
-	
-	
-	
 	
 	
 	
@@ -265,10 +266,8 @@ body {
 		left: 6px;
 		height: 18px;
 		width: 18px;
-		background-color: #ff0000;
 		border-radius: 50%;
 		display: inline-block;
-		background-color: rgb(255, 0, 0);
 	}
 		.lines {
 			position: absolute;
@@ -295,12 +294,19 @@ body {
 			}
 			.tempLine {
 				position: absolute;
-				right: -45px;
-				height: 1px;
-				width: 62px;
+				right: -50px;
+				height: 1.0px;
+				width: 67px;
 				background-color: #cdcdcd;
 			}		
-			.front-value {
+			.front-value.pos {
+				position: absolute;
+				top: -27px;
+				right: 0px;
+			    font-weight: 400;
+			 	font-size: 12px;
+			}
+			.front-value.min {
 				position: absolute;
 				top: -10px;
 				right: 0px;
@@ -312,7 +318,8 @@ body {
 	}	
 	#tempValue {
 		height: 40px;
-	}	
+	}
+	
 	.mainTermo {
 		zoom: 1.2;
     	left: 30px;

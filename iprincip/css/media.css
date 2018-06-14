@@ -1,0 +1,14 @@
+@media only screen and (max-width: 700px) {
+			
+	.termostat {
+		position: absolute;
+		width: 30px;
+		height: 72px; 
+	}
+		.mainTermo {
+			zoom: 1.20;
+			left: calc(50vw - 60px );
+			top: 55px;
+		}	
+			
+}
