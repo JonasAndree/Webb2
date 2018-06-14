@@ -45,14 +45,13 @@ body {
 		.square-small-header {
 			position: absolute;
 		    font-weight: 600;
-   			font-size: 10px;
+   			font-size: 13px;
 		}
 		.top {
-			top: 5px;
+			top: 0px;
 		}
 		.bottom {
    			bottom: 2px;
-   			margin-left: -7px;
 		}
 		.bottom2 {
    			bottom: 2px;
@@ -67,26 +66,12 @@ body {
 		    	background-color: #1E1E1E;
 				flex-wrap: wrap;
 			}
-			
-				.temperture-img {
-					margin-top: 20px;
-					width:170px;
-					filter: blur(0.6px);
-				}
-				 
 				.sub-heading {
 					position: absolute;
-		   			font-size: 10px;
+		   			font-size: 12px;
 		   			bottom: 0px;
 				}
-				
-.front-value {
-	position: absolute;
-	top: 35px;
-	right: 8px;
-    font-weight: 400;
- 	font-size: 10px;
-}
+		
 
 #home{ display: inline; }
 #home.toggle { display: none; }			
@@ -121,14 +106,13 @@ body {
 		z-index: -1;
 	}
 		.graph-image-container {
-			width: 70vw;
 		}
 		.baromter-image-container {
 			width: 30vw;
 			margin-top: -20vw;
 		}
 			.graph-images {
-				width: 100%;
+				/*width: 100%;*/
 			}
 			.baromter-images {
 				position: absolute;
@@ -194,6 +178,11 @@ body {
 
 		.back-img {
 			width: 100px;
+		}
+		.cel-sice {
+			font-size: 20px;
+			margin-top: 0px;
+    		margin-left: 5px;
 		}
 		
 		
@@ -268,6 +257,7 @@ body {
 		bottom: 20px;
 		width: 4px;
 		left: 13px;
+		background-color: rgb(255, 0, 0);
 	}
 	.tempDot {
 		position: absolute;
@@ -278,15 +268,56 @@ body {
 		background-color: #ff0000;
 		border-radius: 50%;
 		display: inline-block;
-	}
-	#tempDot {
 		background-color: rgb(255, 0, 0);
+	}
+		.lines {
+			position: absolute;
+			width:7px;
+			height: 35px;
+			right: -2px;
+			top: 5px;
+		}
+			.line {
+				background-color: #757575;
+				width: 100%;
+				height: 3px;
+				margin-bottom: 5px;
+			}
+			.lineDot {
+				position: absolute;
+				bottom: -32px;
+				right: 0px;
+				height: 32px;
+				width: 32px;
+				background-color: #1E1E1E;
+				border-radius: 50%;
+				display: inline-block;
+			}
+			.tempLine {
+				position: absolute;
+				right: -45px;
+				height: 1px;
+				width: 62px;
+				background-color: #cdcdcd;
+			}		
+			.front-value {
+				position: absolute;
+				top: -10px;
+				right: 0px;
+			    font-weight: 400;
+			 	font-size: 12px;
+			}
+	
+	#tempDot {
 	}	
 	#tempValue {
-		background-color: rgb(255, 0, 0);
 		height: 40px;
 	}	
-			
+	.mainTermo {
+		zoom: 1.2;
+    	left: 30px;
+    	top: 35px;
+	}
 			
 			
 			

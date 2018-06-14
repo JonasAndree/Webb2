@@ -41,6 +41,7 @@ window.onhashchange = function(event) {
 
 window.onresize = function(event) {
 	setMargins(history.state.index);
+	fitImage("design");
 };
 
 function setMargins(view) {
@@ -96,9 +97,83 @@ function flip(element) {
 function showGraph(id) {
 	toggleElement("graph");
 	toggleElement(id);
+	
+	if (id == "design") {
+		fitImage(id);
+	}
 	stateObj = { index: id };
 	history.pushState(stateObj, id, "index.php#" + id);
 }
+
+function fitImage(id) {
+	var element = document.getElementById(id);
+	
+	//window.innerWidth
+	//window.height
+	//img.clientWidth;
+	//img.clientHeight;
+	var imgContainer = element.getElementsByClassName("graph-image-container")[0];
+	var img = imgContainer.getElementsByClassName("graph-images")[0];
+	
+	var wHeight = window.innerWidth;
+	var wWidth = window.innerWidth;
+	var imgHeight = img.naturalHeight;
+	var imgWidth = img.naturalWidth;
+	console.log(img.src);
+	console.log(imgHeight + " : " + imgWidth);
+	
+	var imgProp = imgWidth / imgHeight;
+	var windowProp = wWidth / wHeight;
+	
+	if (wWidth < imgWidth && imgProp >= 1) {
+		console.log("width");
+		var newWRatio = (imgWidth / wWidth)*4/5;
+		if (newWRatio * imgHeight + 100 <= wHeight) {
+			console.log("width");
+			img.style.width = "";
+			img.style.height = wHeight*4/5 + "px";
+		} else {
+			img.style.width = wWidth*4/5 + "px";
+			img.style.height = "";
+		}
+	} else if (wHeight < imgHeight && imgProp >= 1) {
+		console.log("height");
+		var newWRatio = (imgWidth / wWidth)*4/5;
+		if (newWRatio * imgHeight + 100 <= wHeight) {
+			img.style.width = "";
+			img.style.height = wHeight*4/5 + "px";
+		} else {
+			img.style.width = wWidth*4/5 + "px";
+			img.style.height = "";
+		}
+	}
+	
+	/*if (img.clientWidth > window.innerWidth ) {
+		img.style.width = window.innerWidth*4/5 + "px";
+		if (img.clientHeight > window.innerHeight ) {
+			img.style.height = window.innerHeight*4/5 + "px";
+		} 
+	} else {
+		
+	}*/
+	/*if (imgProportions < 1 ) {
+		if (windowProportions < 1) {
+			
+		} else {
+			imgContainer.style.width = img.clientWidth + "px";
+		}
+	} else {
+		if (windowProportions < 1) {
+			
+		} else {
+			
+		}
+	}*/
+	
+	
+	
+}
+
 
 function hideGraph(id) {
 	toggleElement("graph");
@@ -122,12 +197,11 @@ async function demo(celcius) {
 	/*The await expression causes async function 
 	 * execution to pause until  a Promise is fulfilled
 	 */
-	await sleep(500);
+	await sleep(300);
 	animateArrow2(celcius)
 }
 
 function animateArrow2(celcius) {
-	console.log(celcius);
 	var arrow = document.getElementById("arrow");
 	var angle = celcius * 3;
 	
