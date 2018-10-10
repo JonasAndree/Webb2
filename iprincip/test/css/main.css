@@ -1,0 +1,330 @@
+
+.pressable {cursor: pointer;}
+.pressable:hover {filter: brightness(1.2);}
+.pressable:active {filter: brightness(1.4);}
+
+		
+
+body {
+    font-size: 9px;
+    font-family: 'Lato',verdana, sans-serif;
+    color: #fff;
+    background-color: grey;
+    padding: 0px;
+    margin: 0px;
+    
+}
+	header {
+		cursor:pointer;
+		font-size: 40px;
+	    clear: both;
+	    margin: 22px 0vw 22px 22px; 
+	    height: 170px;
+	    background-color: #1E1E1E;
+	    color: #fff;
+	  	display: flex;
+		align-items: center;
+	  	justify-content: center;
+	}
+	main {
+		margin: 0vw 2vw 0vw 2vw;
+		width: 96vw;
+	}
+		.square {
+		    position: absolute;
+		    width: 170px;
+		    height: 170px;
+		}
+		.square-header {
+			position: absolute;
+		    font-weight: 600;
+   			font-size: 16px;
+		}
+		.square-small-header {
+			position: absolute;
+		    font-weight: 600;
+   			font-size: 12px;
+		}
+		.top {
+			top: 0px;
+		}
+		.top2 {
+			top: -8px;
+		}
+		.bottom {
+   			bottom: 2px;
+		}
+		.bottom2 {
+   			bottom: 2px;
+   			margin-left: 0px;
+		}
+			.container {
+				width: 100%;
+				height: 100%;
+			    display: flex;
+				align-items: center;
+				justify-content: center;
+		    	background-color: #1E1E1E;
+				flex-wrap: wrap;
+			}
+				.sub-heading {
+					position: absolute;
+		   			font-size: 12px;
+		   			bottom: 0px;
+				}
+		
+
+#home{ display: inline; }
+#home.toggle { display: none; }			
+#showstationrecords { display: none; }
+#showstationrecords.toggle { display: inline;}
+#graph{ display: none; }
+#graph.toggle { display: inline; }	
+#showtemperature{ display: none; }
+#showtemperature.toggle { display: inline; }	
+#design{ display: none; }
+#design.toggle { display: inline; }	
+
+
+.graph {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+	.graph-background {
+		position: fixed;
+		filter: blur(4px);
+		top: 0px;
+		left: 0px;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(2, 2, 2, 0.8);
+		z-index: -1;
+	}
+		.graph-image-container {
+			position: absolute;
+		}
+		.baromter-image-container {
+			position: absolute;
+			width: 30vw;
+			margin-top: -20vw;
+		}
+			.graph-images {
+				/*width: 100%;*/
+			}
+			.baromter-images {
+				position: absolute;
+				width: 30vw;
+				filter: drop-shadow( 8px 5px 4px #222);
+			}
+			
+			#arrow {
+				position: absolute;
+			}
+			.graph-exit {
+				position: absolute;
+				width: 42px;
+				left: 5px;
+				top: 5px;
+				height: 42px;
+				background-color: #1E1E1E;
+			}
+			.menu-bar-1, .menu-bar-2 {
+				width: 30px;
+				height: 5px;
+				margin: 11px 0px 0px -2px;
+				background-color: #eee;
+				transition: 0.3s;
+			}
+			.menu-bar-1 { transform: rotate(-45deg) translate(1px, 11px); }
+			.menu-bar-2 { transform: rotate(45deg) translate(1px, -11px); }
+
+	
+	
+	
+.scene { perspective: 600px; }
+	.card {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		transition: transform 0.3s;
+		transform-style: preserve-3d;
+		cursor: pointer;
+	}
+		.card.is-flipped {
+			transform: rotateY(180deg);
+		}
+		.card__face {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		    display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			text-align: center;
+			font-weight: bold;
+			font-size: 40px;
+			backface-visibility: hidden;
+		}
+			.card__face--front { background-color: #1E1E1E; }
+			.card__face--back { transform: rotateY(180deg); }
+			.warm { background-color: #ff8080; }
+			.cold { background-color: #359aff; }
+
+		.back-img {
+			width: 100px;
+		}
+		.cel-sice {
+			font-size: 20px;
+			margin-top: 0px;
+    		margin-left: 5px;
+		}
+		
+		
+		
+		
+.termostat {
+	position: absolute;
+	width: 30px;
+	height: 72px; 
+}
+	.dot {
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+		height: 32px;
+		width: 30px;
+		background-color: #757575;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	.topDot {
+		position: absolute;
+		left: 7px;
+		top: -2px;
+		height: 20px;
+		width: 16px;
+		background-color: #757575;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	.roundSquare {
+		position: absolute;
+		top: 5px;
+		left: 7px;
+		height: 55px;
+		width: 16px;
+		background-color: #757575;
+		display: inline-block;
+	}
+	
+	.topInsideDot {
+		position: absolute;
+		left: 11px;
+	    top: 3px;
+		height: 12px;
+		width: 8px;
+		background-color: #1E1E1E;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	.insideRoundSquare {
+		position: absolute;
+		top: 9px;
+		left: 11px;
+		height: 50px;
+		width: 8px;
+		background-color: #1E1E1E;
+		display: inline-block;
+	}
+	.insideDot {
+		position: absolute;
+		bottom: 4px;
+		left: 4px;
+		height: 22px;
+		width: 22px;
+		background-color: #1E1E1E;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	.tempValue {
+		position: absolute;
+		bottom: 20px;
+		width: 4px;
+		left: 13px;
+		background-color: rgb(255, 0, 0);
+	}
+	.tempDot {
+		position: absolute;
+		bottom: 6px;
+		left: 6px;
+		height: 18px;
+		width: 18px;
+		border-radius: 50%;
+		display: inline-block;
+	}
+		.lines {
+			position: absolute;
+			width:7px;
+			height: 35px;
+			right: -2px;
+			top: 5px;
+		}
+			.line {
+				background-color: #757575;
+				width: 100%;
+				height: 3px;
+				margin-bottom: 5px;
+			}
+			.lineDot {
+				position: absolute;
+				bottom: -32px;
+				right: 0px;
+				height: 32px;
+				width: 32px;
+				background-color: #1E1E1E;
+				border-radius: 50%;
+				display: inline-block;
+			}
+			.tempLine {
+				position: absolute;
+				right: -50px;
+				height: 1.0px;
+				width: 67px;
+				background-color: #cdcdcd;
+			}		
+			.front-value.pos {
+				position: absolute;
+				top: -27px;
+				right: 0px;
+			    font-weight: 400;
+			 	font-size: 12px;
+			}
+			.front-value.min {
+				position: absolute;
+				top: -10px;
+				right: 0px;
+			    font-weight: 400;
+			 	font-size: 12px;
+			}
+	
+	#tempDot {
+	}	
+	#tempValue {
+		height: 40px;
+	}
+	
+	.mainTermo {
+		zoom: 1.2;
+    	left: 30px;
+    	top: 35px;
+	}
+			
+			
+			
